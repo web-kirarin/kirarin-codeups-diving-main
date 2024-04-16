@@ -1,1 +1,33 @@
 @use "global" as *;
+
+.section-title {
+  text-align: center;
+  font-weight: $normal;
+}
+
+.section-title__english {
+  font-family: $english-family;
+  font-size: rem(32);
+  color: $green2;
+  line-height: 1.25;
+
+  @include mq("md") {
+    font-size: rem(40);
+    line-height: 1;
+  }
+}
+
+.section-title__english--green {
+  color: $green;
+}
+
+.section-title__japanese {
+  margin-top: rem(4);
+  font-size: rem(12);
+  color: $green;
+  line-height: 1;
+
+  @include mq("md") {
+    margin-top: rem(8);
+  }
+}
