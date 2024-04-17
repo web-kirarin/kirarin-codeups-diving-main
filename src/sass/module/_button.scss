@@ -13,7 +13,6 @@
   line-height: 1.57;
   text-align: center;
   cursor: pointer;
-  z-index: 10;
 }
 
 .button::before {
@@ -25,7 +24,7 @@
   height: rem(54);
   color: transparent;
   border: rem(1) solid $green;
-  z-index: 5;
+  z-index: -2;
 }
 
 .button span::after {
