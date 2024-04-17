@@ -1,1 +1,15 @@
 @use "global" as *;
+
+.button {
+  position: relative;
+  display: inline-block;
+  padding: rem(16) 0;
+  width: rem(202);
+  color: $white;
+  background-color: $green;
+  font-family: $english-family;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: rem(1);
+  text-align: center;
+}
