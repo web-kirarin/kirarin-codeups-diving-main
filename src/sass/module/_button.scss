@@ -3,7 +3,7 @@
 .button {
   position: relative;
   display: inline-block;
-  padding: rem(16) 0;
+  padding: rem(16) rem(88) rem(16) rem(40);
   width: rem(202);
   color: $white;
   background-color: $green;
@@ -28,12 +28,11 @@
 .button::after {
   position: absolute;
   content: '';
-  background-image: url();
+  background-image: url(../images/common/button-arrow.svg);
   background-repeat: no-repeat;
-
-  top: rem(27);
+  background-size: contain;
+  top: rem(22);
   left: rem(122);
-  z-index: 10;
   width: rem(40);
   height: rem(6);
 }
