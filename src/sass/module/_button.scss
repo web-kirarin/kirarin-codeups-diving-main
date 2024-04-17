@@ -10,6 +10,23 @@
   font-family: $english-family;
   font-size: rem(14);
   font-weight: $normal;
-  line-height: rem(1.57);
+  line-height: 1.57;
   text-align: center;
+}
+
+.button::before {
+  position: absolute;
+  content: '';
+  top: rem(4);
+  left: rem(4);
+  width: rem(202);
+  height: rem(54);
+  color: $white;
+  border: rem(1) solid $green;
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  
 }
