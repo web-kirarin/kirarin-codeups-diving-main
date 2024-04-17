@@ -28,5 +28,12 @@
 .button::after {
   position: absolute;
   content: '';
+  background-image: url();
+  background-repeat: no-repeat;
 
+  top: rem(27);
+  left: rem(122);
+  z-index: 10;
+  width: rem(40);
+  height: rem(6);
 }
