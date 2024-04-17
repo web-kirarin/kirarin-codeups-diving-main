@@ -1,0 +1,32 @@
+@use "global" as *;
+
+.section-title-large {
+  text-align: center;
+  font-weight: $normal;
+  text-shadow: rem(5) rem(5) rem(2) rgba($gray2,0.5);
+}
+
+.section-title-large__english {
+  font-family: $english-family;
+  font-size: rem(80);
+  color: $green2;
+  line-height: 1;
+}
+
+.section-title-large__english--green {
+  color: $green;
+}
+
+.section-title-large__japanese1 {
+  margin-top: rem(8);
+  font-size: rem(12);
+  color: $green;
+  line-height: 1;
+}
+
+.section-title-large__japanese2 {
+  margin-top: rem(8);
+  font-size: rem(14);
+  color: $green;
+  line-height: 1;
+}
