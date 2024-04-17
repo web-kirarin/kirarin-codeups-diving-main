@@ -21,12 +21,12 @@
   left: rem(4);
   width: rem(202);
   height: rem(54);
-  color: $white;
+  color: transparent;
   border: rem(1) solid $green;
 }
 
 .button::after {
   position: absolute;
   content: '';
-  
+
 }
