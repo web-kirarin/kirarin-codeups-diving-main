@@ -33,6 +33,31 @@
   border: rem(1) solid $green;
 }
 
+.button span::after {
+  position: absolute;
+  content: '';
+  background-image: url(../images/common/button-arrow.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: rem(22);
+  left: rem(122);
+  width: rem(40);
+  height: rem(6);
+  transition: 0.2s background-image;
+}
+
+.button:hover span::after {
+  position: absolute;
+  content: '';
+  background-image: url(../images/common/button-arrow-hover.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: rem(22);
+  left: rem(122);
+  width: rem(40);
+  height: rem(6);
+}
+
 .button.slide {
   color: $white;
   background-color: $green;
