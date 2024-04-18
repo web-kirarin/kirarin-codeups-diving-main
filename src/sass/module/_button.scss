@@ -3,9 +3,10 @@
 .button {
   position: relative;
   display: inline-block;
-  padding: rem(16) rem(88) rem(16) rem(40);
+  padding: rem(15) rem(87) rem(15) rem(39);
   width: rem(202);
   color: $white;
+  border: rem(1) solid $green;
   background-color: $green;
   font-family: $english-family;
   font-size: rem(14);
@@ -13,71 +14,17 @@
   line-height: 1.57;
   text-align: center;
   cursor: pointer;
-}
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
+  z-index: 10;
 
-.button::before {
-  position: absolute;
-  content: '';
-  top: rem(4);
-  left: rem(4);
-  width: rem(202);
-  height: rem(54);
-  color: transparent;
-  border: rem(1) solid $green;
-  z-index: -2;
+  @include mq("md") {
+    width: rem(202);
+  }
 }
-
-.button span::after {
-  position: absolute;
-  content: '';
-  background-image: url(../images/common/button-arrow.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: rem(22);
-  left: rem(122);
-  width: rem(40);
-  height: rem(6);
-}
-
-.button:hover span::after {
-  position: absolute;
-  content: '';
-  background-image: url(../images/common/button-arrow-hover.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: rem(22);
-  left: rem(122);
-  width: rem(40);
-  height: rem(6);
-}
-
 
 .button.slide {
   color: $white;
   background-color: $green;
   overflow: hidden;
   position: relative;
-}
-
-.button.slide::after {
-  background-color: $white;
-  color: $green;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-  width: 100%;
-  height: 100%;
-  transform: scale(0,1);
-  transform-origin: left top;
-  transition: 0.2s cubic-bezier(0.45, 0, 0.55,1);
-  z-index: -1;
-}
-
-.button.slide:hover {
-  color: $green;
-}
-
-.button.slide:hover::after {
-  transform: scale(1,1);
 }
