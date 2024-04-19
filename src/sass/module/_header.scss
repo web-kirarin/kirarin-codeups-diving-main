@@ -1,0 +1,37 @@
+@use "global" as *;
+
+.header {
+  position: fixed;
+  height: rem(80);
+  top: 0;
+  left: 0;
+  padding-left: rem(15);
+  padding-right: rem(15);
+  z-index: 1000;
+}
+
+.header__inner {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  width: rem(102);
+
+  @include mq("md") {
+    width: rem(133);
+  }
+}
+
+.header__hamburger {
+  z-index: 9999;
+  position: absolute;
+  top: rem(28);
+  right: rem(15);
+}
+
+.header__hamburger span {
+  
+}
