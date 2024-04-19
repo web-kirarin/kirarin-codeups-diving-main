@@ -3,6 +3,7 @@
 .header {
   position: fixed;
   height: rem(80);
+  width: 100%;
   top: 0;
   left: 0;
   padding-left: rem(15);
@@ -26,12 +27,33 @@
 }
 
 .header__hamburger {
+  position: fixed;
   z-index: 9999;
-  position: absolute;
   top: rem(28);
   right: rem(15);
+  width: rem(32);
+  height: rem(24);
+  cursor: pointer;
 }
 
 .header__hamburger span {
-  
+  position: absolute;
+  display: inline-block;
+  left: 0;
+  width: 100%;
+  height: rem(2);
+  background-color: $black;
+  transition: 0.2s transform;
+}
+
+.header__hamburger span:nth-of-type(1) {
+  top: 0;
+}
+
+.header__hamburger span:nth-of-type(2) {
+  top: 50%;
+}
+
+.header__hamburger span:nth-of-type(3) {
+  top: 100%;
 }
