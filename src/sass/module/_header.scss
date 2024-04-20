@@ -9,6 +9,7 @@
   padding-left: rem(15);
   padding-right: rem(15);
   z-index: 1000;
+  background-color: rgba($green2, 0.68);
 }
 
 .header__inner {
@@ -42,8 +43,8 @@
   left: 0;
   width: 100%;
   height: rem(2);
-  background-color: $black;
-  transition: 0.2s transform;
+  background-color: $white;
+  transition: 0.3s transform;
 }
 
 .header__hamburger span:nth-of-type(1) {
@@ -52,8 +53,23 @@
 
 .header__hamburger span:nth-of-type(2) {
   top: 50%;
+  transition: 0.3s opacity;
 }
 
 .header__hamburger span:nth-of-type(3) {
   top: 100%;
+}
+
+.header__hamburger.is-active span:nth-of-type(1) {
+  top: 50%;
+  transform: rotate(-45deg);
+}
+
+.header__hamburger.is-active span:nth-of-type(2) {
+  opacity: 0;
+}
+
+.header__hamburger.is-active span:nth-of-type(3) {
+  top: 50%;
+  transform: rotate(45deg);
 }
