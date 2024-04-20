@@ -21,6 +21,7 @@
 
 .header__logo {
   width: rem(102);
+  z-index: 9999;
 
   @include mq("md") {
     width: rem(133);
