@@ -18,9 +18,25 @@
 .sp-nav__items {
   margin-top: rem(104);
   margin-left: rem(15);
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
+  display: flex;
+  flex-direction: column;
   row-gap: rem(40);
   color: $white;
   font-weight: $normal;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.sp-nav__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.sp-nav__item :nth-of-type(2) {
+  order: 3;
+}
+
+.sp-nav__subtitle {
+  margin-top: rem(24);
+  padding-left: rem(22);
 }
