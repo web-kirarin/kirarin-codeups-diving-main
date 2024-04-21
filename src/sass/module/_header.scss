@@ -20,8 +20,11 @@
 }
 
 .header__logo {
+  position: fixed;
   width: rem(102);
   z-index: 9999;
+  top: rem(21);
+  left: rem(15);
 
   @include mq("md") {
     width: rem(133);
