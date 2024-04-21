@@ -7,6 +7,11 @@
   line-height: 1.125;
 }
 
+.nav-title__second {
+  text-indent: -1.5em;
+  padding-left: 1.5em;
+}
+
 .nav-title::before {
   position: absolute;
   content: '';
