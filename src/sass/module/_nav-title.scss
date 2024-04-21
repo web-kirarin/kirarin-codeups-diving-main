@@ -7,16 +7,6 @@
   line-height: 1.125;
 }
 
-.nav-title__second {
-  text-indent: -0.5em;
-  padding-left: 0.5em;
-
-  @include mq("md") {
-    text-indent: 0;
-    padding-left: 0;
-  }
-}
-
 .nav-title::before {
   position: absolute;
   content: '';
