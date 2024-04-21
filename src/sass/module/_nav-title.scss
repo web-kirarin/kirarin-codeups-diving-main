@@ -1,1 +1,18 @@
 @use "global" as *;
+
+.nav-title {
+  position: relative;
+  font-weight: $bold;
+  padding-left: rem(22);
+  line-height: 1.125;
+}
+
+.nav-title::before {
+  position: absolute;
+  content: '';
+  background-image: url(../images/common/starfish-icon.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  top: 0;
+  left: 0;
+}
