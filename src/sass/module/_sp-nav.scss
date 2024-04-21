@@ -15,6 +15,10 @@
   z-index: 8000;
 }
 
+.sp-nav__flex {
+  display: flex;
+}
+
 .sp-nav__items {
   margin-top: rem(104);
   margin-left: rem(15);
@@ -24,7 +28,6 @@
   color: $white;
   font-weight: $normal;
   flex-wrap: wrap;
-  width: 50%;
 }
 
 .sp-nav__item {
