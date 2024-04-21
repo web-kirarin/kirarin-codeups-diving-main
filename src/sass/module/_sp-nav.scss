@@ -2,10 +2,6 @@
 
 .sp-nav {
   display: none;
-}
-
-.sp-nav.is-active {
-  display: block;
   position: absolute;
   top: 0;
   left: 0;
@@ -13,6 +9,10 @@
   height: 100vh;
   background-color: $green;
   z-index: 8000;
+}
+
+.sp-nav.is-active {
+  display: block;
 }
 
 .sp-nav__flex {
