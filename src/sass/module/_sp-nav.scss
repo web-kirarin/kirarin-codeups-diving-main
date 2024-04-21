@@ -14,3 +14,12 @@
   background-color: $green;
   z-index: 8000;
 }
+
+.sp-nav__items {
+  margin-top: rem(104);
+  margin-left: rem(15);
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  row-gap: rem(40);
+  color: $white;
+}
