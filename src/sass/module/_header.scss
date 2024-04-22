@@ -10,7 +10,7 @@
   background-color: rgba($green2, 0.68);
 
   @include mq("md") {
-    height: rem(98);
+    height: rem(90);
   }
 }
 
@@ -24,7 +24,7 @@
 
   @include mq("md") {
     padding-left: rem(40);
-    padding-right: rem(40);
+    padding-right: rem(20);
   }
 }
 

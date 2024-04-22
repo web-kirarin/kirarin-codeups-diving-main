@@ -2,9 +2,25 @@
 
 
 .pc-nav__items {
-  height: inherit;
-  display: flex;
-  align-items: center;
+  @include mq("md") {
+    height: inherit;
+    display: flex;
+    place-items: center;
+  }
+}
+
+.pc-nav__item {
+  @include mq("md") {
+    height: inherit;
+  }
+}
+
+.pc-nav__title {
+  @include mq("md") {
+    height: inherit;
+    display: inline-block;
+    padding: rem(20) rem(20);
+  }
 }
 
 .pc-nav__english {
