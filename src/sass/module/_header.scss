@@ -8,6 +8,10 @@
   left: 0;
   z-index: 1000;
   background-color: rgba($green2, 0.68);
+
+  @include mq("md") {
+    height: rem(98);
+  }
 }
 
 .header__inner {
@@ -17,6 +21,11 @@
   justify-content: space-between;
   padding-left: rem(15);
   padding-right: rem(15);
+
+  @include mq("md") {
+    padding-left: rem(40);
+    padding-right: rem(40);
+  }
 }
 
 .header__logo {
@@ -28,6 +37,15 @@
 
   @include mq("md") {
     width: rem(133);
+    top: rem(20);
+    left: rem(40);
+
+  }
+}
+
+.header__pc-nav {
+  @include mq("md") {
+    height: inherit;
   }
 }
 
@@ -77,4 +95,3 @@
   top: 50%;
   transform: rotate(45deg);
 }
-
