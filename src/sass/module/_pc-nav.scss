@@ -19,7 +19,7 @@
   @include mq("md") {
     height: inherit;
     display: inline-block;
-    padding: rem(20) rem(20);
+    padding: 0 rem(20);
   }
 }
 
