@@ -4,7 +4,8 @@
 .pc-nav__items {
   @include mq("md") {
     height: inherit;
-    display: flex;
+    display: grid;
+    grid-template-columns: rem(128) rem(120) rem(146) rem(79) rem(88) rem(85) rem(77) rem(111);
     place-items: center;
   }
 }
@@ -12,6 +13,7 @@
 .pc-nav__item {
   @include mq("md") {
     height: inherit;
+    place-items: center;
   }
 }
 
@@ -25,9 +27,15 @@
 
 .pc-nav__english {
   color: $white;
+  font-family: $english-family;
+  font-size: rem(18);
+  font-weight: $normal;
 }
 
 .pc-nav__japanese {
   color: $white;
-}
+  font-weight: $normal;
+  font-size: rem(10);
 
+
+}

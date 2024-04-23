@@ -23,6 +23,9 @@
   padding-right: rem(15);
 
   @include mq("md") {
+    height: inherit;
+    display: grid;
+    grid-template-columns: rem(546) rem(834);
     padding-left: rem(40);
     padding-right: rem(20);
   }
