@@ -1,41 +1,47 @@
 @use "global" as *;
 
+.pc-nav {
+  height: inherit;
+}
 
 .pc-nav__items {
   @include mq("md") {
     height: inherit;
-    display: grid;
-    grid-template-columns: rem(128) rem(120) rem(146) rem(79) rem(88) rem(85) rem(77) rem(111);
-    place-items: center;
+    display: flex;
+    align-items: center;
   }
 }
 
 .pc-nav__item {
   @include mq("md") {
     height: inherit;
-    place-items: center;
   }
 }
 
-.pc-nav__title {
-  @include mq("md") {
-    height: inherit;
-    display: inline-block;
-    padding: 0 rem(20);
-  }
+.pc-nav__item a {
+  height: inherit;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0 rem(20);
+
 }
 
 .pc-nav__english {
-  color: $white;
   font-family: $english-family;
   font-size: rem(18);
   font-weight: $normal;
+  line-height: 1;
+  text-align: center;
 }
 
 .pc-nav__japanese {
-  color: $white;
+  margin-top: rem(4);
   font-weight: $normal;
   font-size: rem(10);
-
-
+  line-height: 1.5;
+  text-align: center;
 }
