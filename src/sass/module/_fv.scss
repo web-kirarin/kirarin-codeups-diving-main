@@ -1,0 +1,41 @@
+@use "global" as *;
+
+.fv {
+  width: 100%;
+  height: 100vh;
+}
+
+.fv__inner {
+  position: relative;
+  width: 100%;
+  height: inherit;
+}
+
+.fv__slider {
+  height: inherit;
+}
+
+.fv__title-wrap {
+  position: absolute;
+  z-index: 10;
+  width: rem(248);
+  font-family: $english-family;
+  color: $white;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, 44%);
+
+  @include mq("md") {
+    width: rem(496);
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, 41%);
+  }
+}
+
+.fv__title {
+  font-size: rem(40);
+  font-weight: $normal;
+  letter-spacing: 0.54em;
+  line-height: 1;
+}
