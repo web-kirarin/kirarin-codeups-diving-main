@@ -1,1 +1,9 @@
 @use "global" as *;
+
+.card1__img {
+  width: rem(280);
+
+  @include mq("md") {
+    width: rem(333);
+  }
+}
