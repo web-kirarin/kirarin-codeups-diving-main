@@ -1,11 +1,18 @@
 @use "global" as *;
 
-.swiper-slide picture,
-.swiper-slide img {
-  height: inherit;
+.fv__slide.swiper-slide picture,
+.fv__slide.swiper-slide img {
+  height: 100vh;
 }
 
-.swiper-slide img {
+.fv__slide.swiper-slide img {
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.campaign__card.swiper-slide img {
+  height: inherit;
   width: 100%;
   object-fit: cover;
   overflow: hidden;

@@ -29,7 +29,7 @@ const swiper02 = new Swiper(".cp-swiper .swiper", {
     delay: 1500,
   },
   breakpoints: {
-    768:{
+    769:{
       slidesPerView:3.5,
     }
   }
