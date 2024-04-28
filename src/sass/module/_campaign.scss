@@ -4,24 +4,9 @@
   padding: rem(40) 0;
 }
 
-.campaign__inner {
-  max-width: rem(768);
-  padding-left: rem(15);
-  padding-right: rem(15);
-  margin-left: auto;
-  margin-right: auto;
-
-  @include mq("md") {
-    max-width: rem(1130);
-    padding-left: rem(25);
-    padding-right: rem(25);
-  }
-}
-
 .campaign__slider {
   margin-top: rem(24);
   height: rem(370);
-  width: 100%;
 
   @include mq("md") {
     height: rem(450);
@@ -30,5 +15,4 @@
 
 .campaign__flex {
   display: flex;
-  overflow: hidden;
 }

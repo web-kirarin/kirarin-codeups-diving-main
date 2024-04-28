@@ -3,3 +3,6 @@
 @use "./module/**/*";
 @use "global" as *;
 
+.main {
+  overflow: hidden;
+}
