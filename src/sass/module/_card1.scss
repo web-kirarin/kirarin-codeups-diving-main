@@ -3,7 +3,11 @@
 .card1 {
   display: block;
   max-width: rem(280);
-  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0 ,0 ,0 , 0.25);
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+
+  @include mq("md") {
+    max-width: rem(333);
+  }
 }
 
 .card1__img {
@@ -32,13 +36,76 @@
   padding: rem(4) rem(12);
   border: rem(1) solid $green;
   display: inline-flex;
+
+  @include mq("md") {
+    padding: rem(6) rem(16);
+  }
+}
+
+.card1__title {
+  margin-top: rem(4);
+  color: $green2;
+  font-size: rem(16);
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .card1__border {
   padding: 0;
-  margin: 0;
+  margin: rem(8) 0 0 0;
   height: 0;
   border: 0;
   width: rem(248);
   border-top: 1px solid $green;
+
+  @include mq("md") {
+    width: rem(301);
+  }
+}
+
+.card1__text {
+  color: $green2;
+  margin-top: rem(8);
+  text-align: center;
+  font-size: rem(14);
+  font-weight: $normal;
+  line-height: 1.714;
+
+  @include mq("md") {
+    margin-top: rem(16);
+    font-size: rem(16);
+    line-height: 1.5;
+  }
+}
+
+.card1__flex {
+  margin-top: rem(8);
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+}
+
+.card1__price {
+  font-family: $english-family;
+  font-weight: $bold;
+  line-height: 1;
+}
+
+.card1__price.card1__price--before {
+  color: $green2;
+  font-size: rem(20);
+  text-decoration: line-through rem(3) $red;
+
+  @include mq("md") {
+    font-size: rem(24);
+  }
+}
+
+.card1__price.card1__price--after {
+  color: $green;
+  font-size: rem(32);
+
+  @include mq("md") {
+    font-size: rem(40);
+  }
 }
