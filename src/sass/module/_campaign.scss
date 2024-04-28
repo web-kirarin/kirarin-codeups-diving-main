@@ -2,6 +2,11 @@
 
 .campaign {
   padding: rem(40) 0;
+
+  @include mq("md") {
+    padding: rem(120) 0 rem(70);
+
+  }
 }
 
 .campaign__slider {
