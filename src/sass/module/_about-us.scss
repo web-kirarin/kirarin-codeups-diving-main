@@ -1,0 +1,29 @@
+@use "global" as *;
+
+.about-us {
+  padding: rem(40) 0 rem(70);
+
+  @include mq("md") {
+  padding: rem(70) 0 rem(164);
+  }
+}
+
+.about-us__img img {
+  width: 100%;
+}
+
+.about-us__img.about-us__img--up{
+  max-width: 34%;
+
+  @include mq("md") {
+    max-width: 42%;
+  }
+}
+
+.about-us__img.about-us__img--down{
+  max-width: 75%;
+
+  @include mq("md") {
+    max-width: 61%;
+  }
+}
