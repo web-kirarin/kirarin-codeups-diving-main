@@ -15,4 +15,8 @@
 
 .campaign__flex {
   display: flex;
+  gap: rem(24);
+  @include mq("md") {
+    gap: rem(40);
+  }
 }

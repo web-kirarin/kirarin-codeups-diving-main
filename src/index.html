@@ -39,27 +39,28 @@
   <!-- ファーストビュー -->
   <div class="fv">
     <div class="fv__inner">
-      <div class="fv__slider swiper fv-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide">
+      <div class="fv-swiper">
+      <div class="fv__slider swiper">
+        <div class="fv__slides swiper-wrapper">
+          <div class="fv__slide swiper-slide">
             <picture>
               <source srcset="./assets/images/common/fv-sp-img1.jpg" media="(max-width:768px)">
               <img src="./assets/images/common/fv-pc-img1.jpg" alt="">
             </picture>
           </div>
-          <div class="swiper-slide">
+          <div class="fv__slide swiper-slide">
             <picture>
               <source srcset="./assets/images/common/fv-sp-img2.jpg" media="(max-width:768px)">
               <img src="./assets/images/common/fv-pc-img2.jpg" alt="">
             </picture>
           </div>
-          <div class="swiper-slide">
+          <div class="fv__slide swiper-slide">
             <picture>
               <source srcset="./assets/images/common/fv-sp-img3.jpg" media="(max-width:768px)">
               <img src="./assets/images/common/fv-pc-img3.jpg" alt="">
             </picture>
           </div>
-          <div class="swiper-slide">
+          <div class="fv__slide swiper-slide">
             <picture>
               <source srcset="./assets/images/common/fv-sp-img4.jpg" media="(max-width:768px)">
               <img src="./assets/images/common/fv-pc-img4.jpg" alt="">
@@ -71,6 +72,7 @@
           <p class="fv__sub-title">into&nbsp;the&nbsp;ocean</p>
         </div>
       </div>
+    </div>
     </div>
   </div>
 
@@ -186,6 +188,7 @@
     </nav>
   </header>
   <main>
+    <!-- キャンペーン -->
     <section id="campaign" class="campaign">
       <div class="campaign__inner inner">
         <div class="campaign__title section-title">
@@ -194,14 +197,15 @@
           </h2>
           <p class="section-title__japanese">キャンペーン</p>
         </div>
-        <div class="campaign__slider swiper cp-swiper">
-          <div class="cp-swiper-button-prev u-desktop"></div>
-          <div class="cp-swiper-button-next u-desktop"></div>
+        <div class="cp-swiper">
+        <div class="campaign__slider swiper">
+          <div class="swiper-button-prev u-desktop"></div>
+          <div class="swiper-button-next u-desktop"></div>
           <div class="campaign__flex swiper-wrapper">
-            <div class="cp-swiper__slide swiper-slide">
+            <div class="campaign__slide swiper-slide">
               <a href="#" class="campaign__card card1">
                 <figure class="card1__img">
-                  <img src="./assets/images/common/campaign-sp-img1.jpg" alt="">
+                  <img src="./assets/images/common/campaign-pc-img1.jpg" alt="">
                 </figure>
                 <div class="card1__body">
                   <div class="card1__box">
@@ -220,10 +224,10 @@
                 </div>
               </a>
             </div>
-            <div class="cd-swiper__slide swiper-slide">
+            <div class="campaign__slide swiper-slide">
               <a href="#" class="campaign__card card1">
                 <figure class="card1__img">
-                  <img src="./assets/images/common/campaign-sp-img1.jpg" alt="">
+                  <img src="./assets/images/common/campaign-pc-img2.jpg" alt="">
                 </figure>
                 <div class="card1__body">
                   <div class="card1__box">
@@ -242,10 +246,10 @@
                 </div>
               </a>
             </div>
-            <div class="cd-swiper__slide swiper-slide">
+            <div class="campaign__slide swiper-slide">
               <a href="#" class="campaign__card card1">
                 <figure class="card1__img">
-                  <img src="./assets/images/common/campaign-sp-img1.jpg" alt="">
+                  <img src="./assets/images/common/campaign-pc-img3.jpg" alt="">
                 </figure>
                 <div class="card1__body">
                   <div class="card1__box">
@@ -264,10 +268,10 @@
                 </div>
               </a>
             </div>
-            <div class="cd-swiper__slide swiper-slide">
+            <div class="campaign__slide swiper-slide">
               <a href="#" class="campaign__card card1">
                 <figure class="card1__img">
-                  <img src="./assets/images/common/campaign-sp-img1.jpg" alt="">
+                  <img src="./assets/images/common/campaign-sp-img4.jpg" alt="">
                 </figure>
                 <div class="card1__body">
                   <div class="card1__box">
@@ -289,6 +293,7 @@
           </div>
 
         </div>
+      </div>
       </div>
     </section>
   </main>
