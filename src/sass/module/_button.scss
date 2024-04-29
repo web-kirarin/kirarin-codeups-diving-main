@@ -7,14 +7,12 @@
 
 .button a {
   color: $white;
-  text-align: center;
+  place-items: center;
   cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: block;
   width: rem(202);
   height: rem(54);
-  margin: 0 auto;
+  padding: rem(16) rem(88) rem(16) rem(40);
   position: relative;
   background-color: $green;
   border: rem(1) solid $green;
@@ -22,12 +20,7 @@
   font-size: rem(14);
   font-weight: $normal;
   line-height: 1.57;
-  transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
   z-index: 10;
-
-  @include mq("md") {
-    width: rem(202);
-  }
 }
 
 
@@ -35,63 +28,40 @@
   position: absolute;
   top: rem(4);
   left: rem(4);
-  width: 100%;
-  height: 100%;
+  width: rem(202);
+  height: rem(55);
   color: $green;
+  display: block;
   border: rem(1) solid $green;
-}
-
-.button span::after {
-  position: absolute;
-  content: '';
-  background-image: url(../images/common/button-arrow.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: rem(22);
-  left: rem(122);
-  width: rem(40);
-  height: rem(6);
-  transition: 0.2s background-image;
-}
-
-.button:hover span::after {
-  position: absolute;
-  content: '';
-  background-image: url(../images/common/button-arrow-hover.svg);
-  background-repeat: no-repeat;
-  background-size: contain;
-  top: rem(22);
-  left: rem(122);
-  width: rem(40);
-  height: rem(6);
-}
-
-.button.slide {
-  color: $white;
-  background-color: $green;
-  position: relative;
-  z-index: 1;
-}
-
-.button.slide::after {
-  background-color: $white;
-  color: $green;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-  width: 100%;
-  height: 100%;
-  transform: scale(0,1);
-  transform-origin: left top;
-  transition: 0.2s cubic-bezier(0.45, 0, 0.55,1);
   z-index: -1;
 }
 
-.button.slide:hover {
+.button span {
+  color: $white;
+  z-index: 20;
+}
+
+.button a:hover span{
   color: $green;
 }
 
-.button.slide:hover::after {
+
+
+.button a::before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  transform: scale(0,1);
+  transform-origin: left top;
+  transition: 0.2s cubic-bezier(0.45, 0, 0.55,1);
+}
+
+
+.button a:hover::before {
   transform: scale(1,1);
 }
