@@ -3,7 +3,6 @@
 .button {
   position: relative;
   display: block;
-  padding: rem(15) rem(87) rem(15) rem(39);
   width: rem(202);
   color: $white;
   border: rem(1) solid $green;
@@ -15,14 +14,19 @@
   text-align: center;
   cursor: pointer;
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
-  z-index: 20;
+  z-index: 10;
 
   @include mq("md") {
     width: rem(202);
   }
 }
 
-.button::before {
+.button span {
+  display: block;
+  padding: rem(15) rem(87) rem(15) rem(39);
+}
+
+.button span::before{
   position: absolute;
   content: '';
   top: rem(4);
@@ -31,7 +35,6 @@
   height: rem(54);
   color: $green;
   border: rem(1) solid $green;
-  z-index: 5;
 }
 
 .button span::after {
