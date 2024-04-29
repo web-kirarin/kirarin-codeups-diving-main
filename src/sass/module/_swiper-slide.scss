@@ -17,3 +17,25 @@
   object-fit: cover;
   overflow: hidden;
 }
+
+.cp-swiper-button-prev {
+  position: absolute;
+  top: -10%;
+  left: 77%;
+  width: rem(80);
+  height: rem(80);
+  background-image: url(../images/common/cp-button-prev.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.cp-swiper-button-next {
+  position: absolute;
+  top: -10%;
+  left: 90%;
+  width: rem(80);
+  height: rem(80);
+  background-image: url(../images/common/cp-button-next.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+}

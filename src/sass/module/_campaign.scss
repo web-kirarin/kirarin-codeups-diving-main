@@ -12,16 +12,27 @@
 .campaign__slider {
   margin-top: rem(24);
   height: rem(370);
+  margin-right: calc(50% - 50vw);
 
   @include mq("md") {
+    margin-top: rem(40);
     height: rem(450);
+    margin-left: calc(50% - 600px);
   }
 }
 
 .campaign__flex {
   display: flex;
-  gap: rem(24);
+}
+
+.campaign__button {
+  margin-top: rem(40);
+
   @include mq("md") {
-    gap: rem(40);
+    margin-top: rem(80);
   }
+}
+
+.campaign__title {
+  position: relative;
 }
