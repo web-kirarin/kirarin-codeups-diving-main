@@ -1,18 +1,27 @@
 @use "global" as *;
 
 .button {
-  position: relative;
   display: block;
-  width: rem(202);
+  margin: 0 auto;
+}
+
+.button a {
   color: $white;
-  border: rem(1) solid $green;
+  text-align: center;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(202);
+  height: rem(54);
+  margin: 0 auto;
+  position: relative;
   background-color: $green;
+  border: rem(1) solid $green;
   font-family: $english-family;
   font-size: rem(14);
   font-weight: $normal;
   line-height: 1.57;
-  text-align: center;
-  cursor: pointer;
   transition: 0.2s cubic-bezier(0.45, 0, 0.55, 1);
   z-index: 10;
 
@@ -21,18 +30,13 @@
   }
 }
 
-.button span {
-  display: block;
-  padding: rem(15) rem(87) rem(15) rem(39);
-}
 
-.button span::before{
+.button .button__mask {
   position: absolute;
-  content: '';
   top: rem(4);
   left: rem(4);
-  width: rem(202);
-  height: rem(54);
+  width: 100%;
+  height: 100%;
   color: $green;
   border: rem(1) solid $green;
 }
