@@ -33,7 +33,7 @@
   background-size: contain;
 
   @include mq("md") {
-    width: 53%;
+    width: 37%;
     aspect-ratio: 400 / 606 ;
   }
 }
@@ -50,21 +50,22 @@
   margin-top: -40%;
 
   @include mq("md") {
-    width: 80%;
+    width: 83%;
     height: auto;
     aspect-ratio: 880 / 581;
-    margin-left: 40%;
-    margin-top: -70%;
+    margin-left: 17%;
+    margin-top: -50%;
   }
 }
 
 .about-us__text-box {
   margin-top: rem(40);
+  display: block;
 
   @include mq("md") {
     position: absolute;
     top: 30%;
-    left: 24%;
+    left: 20%;
     margin-top: 0;
     z-index: 20;
     display: flex;
@@ -112,4 +113,17 @@
   @include mq("md") {
     margin-top: rem(40);
   }
+}
+
+.about-us__icon {
+  @include mq("md") {
+  width: rem(194);
+  height: rem(181);
+  background-image: url(../images/common/about-us-icon.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+  margin-left: 91%;
+  margin-top: -8%;
+}
 }
