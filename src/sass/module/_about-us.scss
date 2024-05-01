@@ -14,6 +14,9 @@
   @include mq("md") {
     position: relative;
     margin-top: rem(40);
+    max-width: 75vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
@@ -69,7 +72,7 @@
     margin-top: 0;
     z-index: 20;
     display: flex;
-    gap: rem(40);
+    column-gap: rem(40);
     align-items: start;
   }
 }
@@ -117,13 +120,14 @@
 
 .about-us__icon {
   @include mq("md") {
+  position: absolute;
   width: rem(194);
   height: rem(181);
   background-image: url(../images/common/about-us-icon.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  margin-left: 91%;
-  margin-top: -8%;
+  top: 87%;
+  left: 90%;
 }
 }
