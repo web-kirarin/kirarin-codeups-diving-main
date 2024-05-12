@@ -46,3 +46,28 @@
     line-height: 1;
   }
 }
+
+.information__border {
+  padding: 0;
+  margin: rem(4) 0 0 0;
+  height: 0;
+  border: 0;
+  width: 100%;
+  border-top: 1px solid $green;
+
+  @include mq("md") {
+  margin: rem(8) 0 0 0;
+  }
+}
+
+.information__text {
+  margin-top: rem(8);
+  color: $green2;
+  font-size: rem(16);
+  font-weight: $normal;
+  line-height: 1.5;
+}
+
+.information__button {
+  margin-top: rem(40);
+}
