@@ -4,3 +4,45 @@
   padding: rem(80) 0 rem(80);
   background-color: $green3;
 }
+
+.information__flex {
+  margin-top: rem(24);
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(24);
+  column-gap: 0;
+  align-items: baseline;
+
+  @include mq("md") {
+    margin-top: rem(40);
+    flex-direction: row;
+    column-gap: rem(48);
+    row-gap: 0;
+    align-items: center;
+  }
+}
+
+.information__image {
+  @include mq("md") {
+    max-width: rem(540);
+  }
+}
+
+.information__textbox {
+
+  @include mq("md") {
+    max-width: rem(492);
+  }
+}
+
+.information__subtitle {
+  color: $green2;
+  font-size: rem(20);
+  font-weight: $bold;
+  line-height: 1.2;
+
+  @include mq("md") {
+    font-size: rem(24);
+    line-height: 1;
+  }
+}
