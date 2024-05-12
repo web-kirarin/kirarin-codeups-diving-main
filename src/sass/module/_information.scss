@@ -22,15 +22,16 @@
   }
 }
 
-.information__image {
+div.information__image {
   position: relative;
+  width: 100%;
 
   @include mq("md") {
     max-width: rem(540);
   }
 }
 
-.information__image .information__color {
+div.information__image div.color {
   position: absolute;
   top: 0;
   right: 0;
@@ -40,7 +41,7 @@
   background-color: $green;
 }
 
-.information__image img {
+div.information__image img {
   display: block;
   width: 100%;
 }
