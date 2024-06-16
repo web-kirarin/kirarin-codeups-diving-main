@@ -2,7 +2,7 @@
 
 .blog {
   position: relative;
-  padding: rem(80) 0 rem(40);
+  padding: rem(80) 0 0;
 
   @include mq("md") {
     padding: rem(100) 0 rem(70);
