@@ -21,6 +21,10 @@
   color: $green;
 }
 
+.section-title__english--white {
+  color: $white;
+}
+
 .section-title__japanese {
   margin-top: rem(4);
   font-size: rem(12);
@@ -30,4 +34,8 @@
   @include mq("md") {
     margin-top: rem(8);
   }
+}
+
+.section-title__japanese--white {
+  color: $white;
 }

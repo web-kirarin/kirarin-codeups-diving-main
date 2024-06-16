@@ -1,10 +1,11 @@
 @use "global" as *;
 
 .blog {
+  position: relative;
   padding: rem(80) 0 rem(40);
 
   @include mq("md") {
-  padding: rem(100) 0 rem(70);
+    padding: rem(100) 0 rem(70);
   }
 }
 
@@ -18,9 +19,47 @@
   @include mq("md") {
     margin-top: rem(80);
     flex-direction: row;
+    justify-content: space-between;
   }
 }
 
 .blog__button {
   margin-top: rem(40);
+
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
+
+.blog__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  @include mq("md") {
+    display: block;
+    width: 100%;
+    height: rem(500);
+    background-image: url(../images/common/blog-background-img.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    z-index: -1;
+  }
+}
+
+.blog__fish {
+  position: absolute;
+
+  @include mq("md") {
+    top: rem(24);
+    left: rem(100);
+    display: block;
+    width: rem(437);
+    height: rem(201);
+    background-image: url(../images/common/blog-fish-img.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
 }
