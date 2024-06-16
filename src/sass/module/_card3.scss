@@ -1,0 +1,34 @@
+@use "global" as *;
+
+.card3 {
+  display: block;
+  max-width: rem(345);
+  box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
+  background-color: $white;
+}
+
+.card3__img {
+  max-width: rem(151);
+  margin: rem(24) rem(16) 0 0;
+
+  @include mq("md") {
+  max-width: rem(180);
+  margin: rem(24) rem(24) 0 0;
+  }
+}
+
+.card3__flex {
+  display: flex;
+  gap: rem(13);
+  align-items: flex-end;
+}
+
+.card3__flex2 {
+  display: flex;
+  flex-direction: column;
+
+  @include mq("md") {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
