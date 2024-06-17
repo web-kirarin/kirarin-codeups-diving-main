@@ -3,32 +3,58 @@
 .card3 {
   display: block;
   max-width: rem(345);
+  padding: rem(15) rem(16) rem(24) rem(16);
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   background-color: $white;
+
+  @include mq("md") {
+  padding: rem(15) rem(16) rem(24) rem(16);
+  }
 }
 
 .card3__img {
   max-width: rem(151);
-  margin: rem(24) rem(16) 0 0;
+  margin-top: rem(1);
 
   @include mq("md") {
   max-width: rem(180);
-  margin: rem(24) rem(24) 0 0;
+  margin-top: 0;
   }
+}
+
+.card3__img img {
+  width: 100%;
+  aspect-ratio: 151 / 117;
 }
 
 .card3__flex {
   display: flex;
   gap: rem(13);
-  align-items: flex-end;
+  align-items: center;
 }
 
 .card3__flex2 {
   display: flex;
   flex-direction: column;
 
+
   @include mq("md") {
     flex-direction: row;
     justify-content: space-between;
+  }
+}
+
+.card3__box {
+  color: $green;
+  font-size: rem(12);
+  font-weight: $normal;
+  max-width: rem(110);
+  line-height: 1.833;
+  padding: rem(4) rem(12);
+  border: rem(1) solid $green;
+  display: inline-flex;
+
+  @include mq("md") {
+    padding: rem(6) rem(16);
   }
 }

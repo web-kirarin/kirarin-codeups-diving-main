@@ -20,3 +20,11 @@
   flex-direction: row;
   }
 }
+
+.voice__button {
+  margin-top: rem(40);
+
+  @include mq("md") {
+    margin-top: rem(80);
+  }
+}
