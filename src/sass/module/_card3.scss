@@ -9,16 +9,17 @@
 
   @include mq("md") {
   padding: rem(15) rem(16) rem(24) rem(16);
+  max-width: rem(520);
   }
 }
 
 .card3__img {
   max-width: rem(151);
-  margin-top: rem(1);
+  align-self: flex-end;
+  flex-shrink: 0;
 
   @include mq("md") {
   max-width: rem(180);
-  margin-top: 0;
   }
 }
 
@@ -45,13 +46,18 @@ div.card3__img div.color {
 
 div.card3__img img {
   display: block;
-  width: 100%;
 }
 
 .card3__flex {
   display: flex;
   gap: rem(13);
   align-items: center;
+}
+
+.card3__top {
+  @include mq("md") {
+    max-width: rem(276);
+  }
 }
 
 .card3__flex2 {
@@ -69,13 +75,47 @@ div.card3__img img {
   color: $green;
   font-size: rem(12);
   font-weight: $normal;
-  max-width: rem(110);
   line-height: 1.833;
   padding: rem(4) rem(12);
   border: rem(1) solid $green;
   display: inline-flex;
+  align-self: flex-start;
 
   @include mq("md") {
     padding: rem(6) rem(16);
   }
+}
+
+.card3__age {
+  color: $green2;
+  font-size: rem(12);
+  font-weight: $normal;
+  line-height: 1.5;
+}
+
+.card3__title {
+  margin-top: rem(4);
+  color: $green2;
+  font-size: rem(16);
+  font-weight: 500;
+}
+
+.card3__border {
+  padding: 0;
+  margin: rem(4) 0 0 0;
+  height: 0;
+  border: 0;
+  width: rem(149);
+  border-top: 1px solid $green;
+
+  @include mq("md") {
+    width: rem(301);
+  }
+}
+
+.card3__text {
+  margin-top: rem(16);
+  color: $black;
+  font-weight: $normal;
+  line-height: 1.5;
 }
