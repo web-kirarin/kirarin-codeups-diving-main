@@ -27,6 +27,27 @@
   aspect-ratio: 151 / 117;
 }
 
+
+div.card3__img {
+  position: relative;
+  width: 100%;
+}
+
+div.card3__img div.color {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: $green;
+}
+
+div.card3__img img {
+  display: block;
+  width: 100%;
+}
+
 .card3__flex {
   display: flex;
   gap: rem(13);
