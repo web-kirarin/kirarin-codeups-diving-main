@@ -8,14 +8,14 @@
   background-color: $white;
 
   @include mq("md") {
-  padding: rem(15) rem(16) rem(24) rem(16);
+  padding: rem(24);
   max-width: rem(520);
   }
 }
 
 .card3__img {
   max-width: rem(151);
-  align-self: flex-end;
+  // align-self: flex-end;
   flex-shrink: 0;
 
   @include mq("md") {
@@ -51,7 +51,7 @@ div.card3__img img {
 .card3__flex {
   display: flex;
   gap: rem(13);
-  align-items: center;
+  align-items: flex-end;
 }
 
 .card3__top {
@@ -68,6 +68,7 @@ div.card3__img img {
   @include mq("md") {
     flex-direction: row;
     justify-content: space-between;
+    align-items: flex-end;
   }
 }
 
@@ -98,6 +99,11 @@ div.card3__img img {
   color: $green2;
   font-size: rem(16);
   font-weight: 500;
+
+  @include mq("md") {
+    margin-top: rem(8);
+    font-size: rem(24);
+  }
 }
 
 .card3__border {
@@ -109,13 +115,18 @@ div.card3__img img {
   border-top: 1px solid $green;
 
   @include mq("md") {
-    width: rem(301);
+    width: rem(276);
   }
 }
 
 .card3__text {
   margin-top: rem(16);
+  font-size: rem(16);
   color: $black;
   font-weight: $normal;
   line-height: 1.5;
+
+  @include mq("md") {
+    margin-top: rem(40);
+  }
 }
