@@ -34,6 +34,11 @@
   font-weight: $normal;
   line-height: 1.71429;
   color: $green2;
+
+  @include mq("md") {
+    font-size: rem(16);
+    line-height: 1.5;
+  }
 }
 
 .table1__line > td:not(:first-of-type) {

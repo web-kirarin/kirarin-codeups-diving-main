@@ -1,6 +1,7 @@
 @use "global" as *;
 
 .price {
+  position: relative;
   padding: rem(80) 0 rem(80);
   background-color: $green3;
 
@@ -83,5 +84,21 @@ div.price__pc-img img {
 
   @include mq("md") {
     margin-top: rem(80);
+  }
+}
+
+.price__fish {
+  position: absolute;
+
+  @include mq("md") {
+    bottom: rem(60);
+    left: rem(100);
+    display: block;
+    width: rem(437);
+    height: rem(201);
+    background-image: url(../images/common/price-fish-img.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
   }
 }
