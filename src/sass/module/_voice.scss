@@ -1,6 +1,7 @@
 @use "global" as *;
 
 .voice {
+  position: relative;
   padding: rem(80) 0 rem(80);
 
   @include mq("md") {
@@ -18,7 +19,7 @@
   @include mq("md") {
   margin-top: rem(30);
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   }
 }
 
@@ -27,5 +28,37 @@
 
   @include mq("md") {
     margin-top: rem(80);
+  }
+}
+
+.voice__fish {
+  position: absolute;
+
+  @include mq("md") {
+    top: rem(20);
+    left: rem(100);
+    display: block;
+    width: rem(301);
+    height: rem(138);
+    background-image: url(../images/common/voice-fish-img.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+  }
+}
+
+.voice__seahorse {
+  position: absolute;
+
+  @include mq("md") {
+    bottom: rem(73);
+    right: rem(45);
+    display: block;
+    width: rem(301);
+    height: rem(138);
+    background-image: url(../images/common/voice-seahorse-img.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
   }
 }

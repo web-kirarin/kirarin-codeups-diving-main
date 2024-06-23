@@ -1,0 +1,26 @@
+@use "global" as *;
+
+.table__title {
+  color: $green2;
+  font-size: rem(16);
+  font-style: normal;
+  font-weight: $bold;
+  line-height: 1.5;
+}
+
+.table1__border {
+  padding: 0;
+  margin: rem(4) 0 0 0;
+  height: 0;
+  border: 0;
+  width: 100%;
+  border-top: 1px solid $green;
+
+  @include mq("md") {
+    width: rem(301);
+  }
+}
+
+.table__line > td {
+  font-family: $base-font-family;
+}
