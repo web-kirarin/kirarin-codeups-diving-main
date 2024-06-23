@@ -1,6 +1,6 @@
 @use "global" as *;
 
-.table__title {
+.table1__title {
   color: $green2;
   font-size: rem(16);
   font-style: normal;
@@ -15,12 +15,28 @@
   border: 0;
   width: 100%;
   border-top: 1px solid $green;
-
-  @include mq("md") {
-    width: rem(301);
-  }
+  display: block;
 }
 
-.table__line > td {
+.table1__table {
+  width: 100%;
+  margin-top: rem(4);
+}
+
+.table1__line {
+  margin-top: rem(8);
+}
+
+.table1__line > td {
   font-family: $base-font-family;
+  font-size: rem(14);
+  font-style: normal;
+  font-weight: $normal;
+  line-height: 1.71429;
+  color: $green2;
 }
+
+.table1__line > td:not(:first-of-type) {
+  text-align: right;
+}
+
