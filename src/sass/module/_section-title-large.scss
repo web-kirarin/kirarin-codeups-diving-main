@@ -3,6 +3,9 @@
 .section-title-large {
   text-align: center;
   font-weight: $normal;
+}
+
+.section-title-large--shadow {
   text-shadow: rem(5) rem(5) rem(2) rgba($gray2,0.5);
 }
 
