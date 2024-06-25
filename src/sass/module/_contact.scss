@@ -1,0 +1,15 @@
+@use "global" as *;
+
+.contact {
+  padding: rem(80) 0 rem(100);
+}
+
+.contact__items {
+  text-shadow: rem(5) rem(5) rem(2) rgba($gray2,0.5);
+
+  @include mq("md") {
+    text-shadow: none;
+
+  }
+}
+
