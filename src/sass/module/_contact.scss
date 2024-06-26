@@ -18,6 +18,7 @@
 
   @include mq("md") {
     display: flex;
+    justify-content: space-around;
   }
 }
 
@@ -44,4 +45,13 @@
   }
 }
 
+.contact__item2 {
+  border: none;
+
+  @include mq("md") {
+    border-left: 1px solid $green;
+    padding-left: rem(81);
+
+  }
+}
 
