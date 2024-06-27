@@ -1,15 +1,38 @@
 @use "global" as *;
 
 .contact {
+  position: relative;
   padding: rem(80) 0 rem(100);
-}
-
-.contact__items {
   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 
   @include mq("md") {
     filter: none;
 
+  }
+}
+
+.contact__fish {
+  position: absolute;
+  top: rem(54);
+  right: rem(15);
+  display: block;
+  width: rem(109);
+  height: rem(50);
+  background-image: url(../images/common/contact-fish-img.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: contain;
+
+  @include mq("md") {
+    top: rem(60);
+    left: rem(100);
+    display: block;
+    width: rem(437);
+    height: rem(201);
+    background-image: url(../images/common/contact-fish-img.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
   }
 }
 
@@ -22,8 +45,37 @@
   }
 }
 
+.contact__item1 {
+  text-align: center;
+
+  @include mq("md") {
+    text-align: left;
+  }
+}
+
+.contact__logo {
+  width: rem(174);
+  height: rem(65);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact__border {
+  padding: 0;
+  margin: rem(6) auto 0 auto;
+  height: 0;
+  border: 0;
+  width: 85.5%;
+  border-top: 1px solid $green;
+
+  @include mq("md") {
+    width: rem(301);
+  }
+}
+
 .contact__flex {
   display: block;
+  margin-top: rem(16);
 
   @include mq("md") {
     display: flex;
@@ -32,11 +84,25 @@
   }
 }
 
-.contact-map {
+.contact__textbox {
+  font-size: rem(16);
+  font-family: $base-font-family;
+  font-style: normal;
+  font-weight: $normal;
+  line-height: 1.5;
+}
+
+.contact__text:not(:first-of-type) {
+  margin-top: rem(4);
+}
+
+.contact__map {
   display: block;
   width: rem(295);
   height: rem(160);
   margin-top: rem(16);
+  margin-left: auto;
+  margin-right: auto;
 
   @include mq("md") {
     width: rem(273);
@@ -55,3 +121,14 @@
   }
 }
 
+.contact__title {
+  margin-top: rem(40);
+
+  @include mq("md") {
+    margin-top: 0;
+  }
+}
+
+.contact__button {
+  margin-top: rem(40);
+}
