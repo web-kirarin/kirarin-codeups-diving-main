@@ -1,0 +1,44 @@
+@use "global" as *;
+
+.footer {
+  background-color: $green;
+  padding: rem(48) 0 rem(51) 0;
+
+  @include mq("md") {
+  padding: rem(80) rem(252) rem(80) rem(180);
+
+  }
+}
+
+.footer__flex1 {
+  display: flex;
+}
+
+.footer__flex2 {
+  display: block;
+
+  @include mq("md") {
+    display: flex;
+  }
+}
+
+.footer__items {
+  margin-top: rem(104);
+  margin-left: rem(15);
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(40);
+  color: $white;
+  font-weight: $normal;
+  flex-wrap: wrap;
+}
+
+.footer__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer__subtitle {
+  margin-top: rem(24);
+  padding-left: rem(22);
+}
