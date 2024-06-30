@@ -5,7 +5,7 @@
   padding: rem(48) 0 rem(51) 0;
 
   @include mq("md") {
-    padding: rem(80) rem(252) rem(80) rem(180);
+    padding: rem(80) 0;
 
   }
 }
@@ -22,11 +22,9 @@
 
 .footer__logo {
   width: rem(102);
-  margin-left: rem(15);
 
   @include mq("md") {
     width: rem(200);
-    margin-left: rem(180);
   }
 }
 
@@ -43,17 +41,25 @@
 
 .footer__facebook-icon,
 .footer__instagram-icon {
+  display: block;
   width: rem(24);
+  height: rem(24);
 
   @include mq("md") {
     width: rem(32);
+    height: rem(32);
   }
+}
+
+.footer__facebook-icon img,
+.footer__instagram-icon img {
+  width: 100%;
 }
 
 .footer__flex1 {
   display: flex;
   justify-content: space-between;
-  column-gap: rem(38);
+  column-gap: rem(8);
   margin-top: rem(40);
 
   @include mq("md") {
@@ -81,7 +87,8 @@
   color: $white;
   font-weight: $normal;
   flex-wrap: wrap;
-  width: rem(144);
+  width: rem(150);
+  flex-shrink: 0;
 
   @include mq("md") {
     margin-top: 0;
@@ -91,7 +98,7 @@
 .footer__item {
   display: flex;
   flex-direction: column;
-  width: rem(144);
+  width: rem(150);
 
   @include mq("md") {
     width: rem(185);
@@ -104,4 +111,17 @@
   font-size: rem(16);
   font-style: normal;
   font-weight: $normal;
+  flex-shrink: 0;
+}
+
+.footer__copyright-wrapper {
+  margin-top: rem(40);
+  text-align: center;
+}
+
+.footer__copyright {
+  padding: 0 rem(14);
+  font-family: $english-family;
+  font-size: rem(12);
+  color: $white;
 }
