@@ -4,6 +4,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".js-hamburger").toggleClass("is-active");
     $(".js-sp-nav").toggleClass("is-active");
   });
+  //ローディングアニメーション
+    $(window).on("load", function () {
+      $(".js-load").fadeOut(1000);
+    });
+
   //スライダー
   const swiper01 = new Swiper(".fv-swiper .swiper", {
     loop: true,

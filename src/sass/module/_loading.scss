@@ -1,0 +1,52 @@
+@use "global" as *;
+
+.loading {
+  position: fixed;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: $green;
+  background-color: $white;
+}
+
+.loading__title-wrap {
+  position: absolute;
+  z-index: 10;
+  width: rem(248);
+  font-family: $english-family;
+  text-align: center;
+  top: 44%;
+  left: 50%;
+  transform: translate(-50%, 44%);
+
+  @include mq("md") {
+    width: rem(496);
+    top: 41%;
+    left: 50%;
+    transform: translate(-50%, 41%);
+  }
+}
+
+.loading__title {
+  font-size: rem(40);
+  font-weight: $normal;
+  letter-spacing: 0.54em;
+  line-height: 1;
+
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: 1.25;
+  }
+}
+
+.loading__subtitle {
+  font-size: rem(20);
+  line-height: 1;
+}
+
