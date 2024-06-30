@@ -63,30 +63,35 @@
 }
 
 .footer__flex2 {
-  display: block;
+  display: flex;
+  flex-direction: column;
+  row-gap: rem(40);
 
   @include mq("md") {
-    display: flex;
+    flex-direction: row;
     justify-content: space-between;
     column-gap: rem(142);
   }
 }
 
 .footer__items {
-  margin-top: rem(104);
-  margin-left: rem(15);
   display: flex;
   flex-direction: column;
   row-gap: rem(40);
   color: $white;
   font-weight: $normal;
   flex-wrap: wrap;
+  width: rem(144);
+
+  @include mq("md") {
+    margin-top: 0;
+  }
 }
 
 .footer__item {
   display: flex;
   flex-direction: column;
-  width: rem(96);
+  width: rem(144);
 
   @include mq("md") {
     width: rem(185);
