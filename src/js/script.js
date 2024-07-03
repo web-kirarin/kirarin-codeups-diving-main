@@ -7,27 +7,50 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   //ローディングアニメーション
   $(window).on("load", function () {
     $(".js-load").fadeOut(1000, function() {
-        const loader = document.getElementById('.js-loader');
-        loader.style.display = 'flex';
+        const loader = document.querySelector('.js-loader');
+        if (loader) {
+            loader.style.display = 'flex';
+        } else {
+            console.error('Loader element not found');
+        }
 
         const overlayText = document.querySelector('.js-overlay-text');
-        const turtleImage = document.querySelector('.loading__turtle-full-image');
+        const turtleImages = document.querySelectorAll('.loading__turtle-image');
+        const content = document.querySelector('.js-content');
+
+        if (turtleImages.length === 4) {
+            turtleImages.forEach((image) => {
+                image.style.animationPlayState = 'running';
+            });
+        } else {
+            console.error('Not all turtle images were found');
+        }
 
         setTimeout(() => {
-            loader.style.opacity = '0';
-            setTimeout(() => {
-                loader.style.display = 'none';
-                document.getElementById('.js-content').style.display = 'block';
+            if (loader) {
+                loader.style.opacity = '0';
                 setTimeout(() => {
-                    overlayText.style.opacity = '1';
-                }, 500); // Delay to show overlay text
-                setTimeout(() => {
-                    turtleImage.classList.add('fade-out');
-                }, 3000); // Time before fading out the turtle image
-            }, 500); // Adjust the fade-out duration if needed
+                    loader.style.display = 'none';
+                    if (content) {
+                        content.style.display = 'block';
+                    } else {
+                        console.error('Content element not found');
+                    }
+                    setTimeout(() => {
+                        if (overlayText) {
+                            overlayText.style.opacity = '1';
+                        } else {
+                            console.error('Overlay text element not found');
+                        }
+                    }, 500); // Delay to show overlay text
+                }, 500); // Adjust the fade-out duration if needed
+            }
         }, 3000); // Adjust the time (3000ms = 3s) as needed
     });
 });
+
+
+
 
 
 
