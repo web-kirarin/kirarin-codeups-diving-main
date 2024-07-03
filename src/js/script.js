@@ -6,48 +6,34 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
   //ローディングアニメーション
   $(window).on("load", function () {
-    $(".js-load").fadeOut(1000, function() {
-        const loader = document.querySelector('.js-loader');
-        if (loader) {
-            loader.style.display = 'flex';
-        } else {
-            console.error('Loader element not found');
-        }
+    $(".js-load").fadeOut(1000, function () {
+      const loader = document.querySelector('.js-loader');
+      const content = document.querySelector('.js-content');
+      const overlayText = document.querySelector('.js-overlay-text');
+      const turtleImages = document.querySelectorAll('.loading__turtle-image');
 
-        const overlayText = document.querySelector('.js-overlay-text');
-        const turtleImages = document.querySelectorAll('.loading__turtle-image');
-        const content = document.querySelector('.js-content');
-
-        if (turtleImages.length === 4) {
-            turtleImages.forEach((image) => {
-                image.style.animationPlayState = 'running';
-            });
-        } else {
-            console.error('Not all turtle images were found');
-        }
+      if (loader && content && overlayText && turtleImages.length === 4) {
+        loader.style.display = 'flex';
 
         setTimeout(() => {
-            if (loader) {
-                loader.style.opacity = '0';
-                setTimeout(() => {
-                    loader.style.display = 'none';
-                    if (content) {
-                        content.style.display = 'block';
-                    } else {
-                        console.error('Content element not found');
-                    }
-                    setTimeout(() => {
-                        if (overlayText) {
-                            overlayText.style.opacity = '1';
-                        } else {
-                            console.error('Overlay text element not found');
-                        }
-                    }, 500); // Delay to show overlay text
-                }, 500); // Adjust the fade-out duration if needed
-            }
+          loader.style.opacity = '0';
+          setTimeout(() => {
+            loader.style.display = 'none';
+            content.style.display = 'block';
+            setTimeout(() => {
+              overlayText.style.opacity = '1';
+            }, 500); // Delay to show overlay text
+          }, 500); // Adjust the fade-out duration if needed
         }, 3000); // Adjust the time (3000ms = 3s) as needed
+
+        turtleImages.forEach((image) => {
+          image.style.animationPlayState = 'running';
+        });
+      } else {
+        console.error('One or more elements not found');
+      }
     });
-});
+  });
 
 
 
