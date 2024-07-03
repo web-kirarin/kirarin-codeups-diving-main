@@ -45,20 +45,24 @@
       <p class="loading__sub-title">into&nbsp;the&nbsp;ocean</p>
     </div>
   </div>
-    <div class="loading__loader js-loader">
-        <div class="loading__container">
-            <div class="loading__turtle-image loading__turtle-image-left"></div>
-            <div class="loading__turtle-image loading__turtle-image-right"></div>
-        </div>
+  <div class="loading__loader js-loader">
+    <div class="loading__container">
+      <div class="loading__turtle-image loading__turtle-image-left u-desktop"></div>
+      <div class="loading__turtle-image loading__turtle-image-right u-desktop"></div>
+      <div class="loading__turtle-image loading__turtle-image-top u-mobile"></div>
+      <div class="loading__turtle-image loading__turtle-image-bottom u-mobile"></div>
     </div>
-    <div class="loading__content">
-        <img src="turtle.jpg" alt="Diving Turtle" class="turtle-full-image">
-        <div class="overlay-text">
-            <h1>D I V I N G</h1>
-            <p>into the ocean</p>
-        </div>
+  </div>
+  <div class="loading__content js-content">
+    <picture>
+      <source srcset="./assets/images/common/fv-sp-img1.jpg" media="(max-width:768px)">
+      <img src="./assets/images/common/fv-pc-img1.jpg" alt="ウミガメが海の中を泳いている様子" class="loading__turtle-full-image">
+    </picture>
+    <div class="loading__overlay-text js-overlay-text">
+      <p class="loading__title">DIVING</p>
+      <p class="loading__sub-title">into&nbsp;the&nbsp;ocean</p>
     </div>
-    <script src="script.js"></script>
+  </div>
 
 
   <!-- ヘッダー -->
@@ -697,77 +701,79 @@
   </main>
   <footer class="footer">
     <div class="footer__inner inner">
-    <div class="footer__top-flex">
-    <h1 class="footer__name"><img src="./assets/images/common/footer-logo-img.png" alt="フッターロゴ" class="footer__logo"></h1>
-    <div class="footer__icon-flex">
-      <div class="footer__facebook-icon-wrapper">
-        <a href="" class="footer__facebook-icon">
-          <img src="./assets/images/common/footer-facebook-logo.png" alt="facebook-icon">
-        </a>
+      <div class="footer__top-flex">
+        <h1 class="footer__name"><img src="./assets/images/common/footer-logo-img.png" alt="フッターロゴ"
+            class="footer__logo"></h1>
+        <div class="footer__icon-flex">
+          <div class="footer__facebook-icon-wrapper">
+            <a href="" class="footer__facebook-icon">
+              <img src="./assets/images/common/footer-facebook-logo.png" alt="facebook-icon">
+            </a>
+          </div>
+          <div class="footer__instagram-icon">
+            <img src="./assets/images/common/footer-instagram-logo.png" alt="">
+          </div>
+        </div>
       </div>
-      <div class="footer__instagram-icon">
-        <img src="./assets/images/common/footer-instagram-logo.png" alt="">
+      <div class="footer__flex1">
+        <div class="footer__flex2">
+          <ul class="footer__items">
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#campaign">キャンペーン</a>
+              <a href="#" class="footer__subtitle">ライセンス取得</a>
+              <a href="#" class="footer__subtitle">貸切体験ダイビング</a>
+              <a href="#" class="footer__subtitle">ナイトダイビング</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#about-us">私たちについて</a>
+            </li>
+          </ul>
+          <ul class="footer__items">
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#">ダイビング情報</a>
+              <a href="#" class="footer__subtitle">ライセンス講習</a>
+              <a href="#" class="footer__subtitle">体験ダイビング</a>
+              <a href="#" class="footer__subtitle">ファンダイビング</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#blog">ブログ</a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__flex2">
+          <ul class="footer__items">
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#voice">お客様の声</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#price">料金一覧</a>
+              <a href="#" class="footer__subtitle">ライセンス講習</a>
+              <a href="#" class="footer__subtitle">体験ダイビング</a>
+              <a href="#" class="footer__subtitle">ファンダイビング</a>
+            </li>
+          </ul>
+          <ul class="footer__items">
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#faq">よくある質問</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#">プライバシー<br class="u-mobile">ポリシー
+              </a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#">利用規約</a>
+            </li>
+            <li class="footer__item">
+              <a class="footer__title nav-title" href="#">お問い合わせ</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
+    <div class="footer__copyright-wrapper">
+      <small
+        class="footer__copyright">Copyright&nbsp;&copy;&nbsp;2021&nbsp;-&nbsp;2023&nbsp;CodeUps&nbsp;LLC.&nbsp;All&nbsp;Rights&nbsp;Reserved</small>
     </div>
-    <div class="footer__flex1">
-      <div class="footer__flex2">
-      <ul class="footer__items">
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#campaign">キャンペーン</a>
-          <a href="#" class="footer__subtitle">ライセンス取得</a>
-          <a href="#" class="footer__subtitle">貸切体験ダイビング</a>
-          <a href="#" class="footer__subtitle">ナイトダイビング</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#about-us">私たちについて</a>
-        </li>
-      </ul>
-      <ul class="footer__items">
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#">ダイビング情報</a>
-          <a href="#" class="footer__subtitle">ライセンス講習</a>
-          <a href="#" class="footer__subtitle">体験ダイビング</a>
-          <a href="#" class="footer__subtitle">ファンダイビング</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#blog">ブログ</a>
-        </li>
-      </ul>
-    </div>
-    <div class="footer__flex2">
-      <ul class="footer__items">
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#voice">お客様の声</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#price">料金一覧</a>
-          <a href="#" class="footer__subtitle">ライセンス講習</a>
-          <a href="#" class="footer__subtitle">体験ダイビング</a>
-          <a href="#" class="footer__subtitle">ファンダイビング</a>
-        </li>
-      </ul>
-      <ul class="footer__items">
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#faq">よくある質問</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#">プライバシー<br class="u-mobile">ポリシー
-          </a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#">利用規約</a>
-        </li>
-        <li class="footer__item">
-          <a class="footer__title nav-title" href="#">お問い合わせ</a>
-        </li>
-      </ul>
-    </div>
-    </div>
-  </div>
-  <div class="footer__copyright-wrapper">
-  <small class="footer__copyright">Copyright&nbsp;&copy;&nbsp;2021&nbsp;-&nbsp;2023&nbsp;CodeUps&nbsp;LLC.&nbsp;All&nbsp;Rights&nbsp;Reserved</small>
-</div>
   </footer>
 </body>
 

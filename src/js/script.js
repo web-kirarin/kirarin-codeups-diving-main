@@ -5,9 +5,31 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".js-sp-nav").toggleClass("is-active");
   });
   //ローディングアニメーション
-    $(window).on("load", function () {
-      $(".js-load").fadeOut(1000);
+  $(window).on("load", function () {
+    $(".js-load").fadeOut(1000, function() {
+        const loader = document.getElementById('.js-loader');
+        loader.style.display = 'flex';
+
+        const overlayText = document.querySelector('.js-overlay-text');
+        const turtleImage = document.querySelector('.loading__turtle-full-image');
+
+        setTimeout(() => {
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none';
+                document.getElementById('.js-content').style.display = 'block';
+                setTimeout(() => {
+                    overlayText.style.opacity = '1';
+                }, 500); // Delay to show overlay text
+                setTimeout(() => {
+                    turtleImage.classList.add('fade-out');
+                }, 3000); // Time before fading out the turtle image
+            }, 500); // Adjust the fade-out duration if needed
+        }, 3000); // Adjust the time (3000ms = 3s) as needed
     });
+});
+
+
 
   //スライダー
   const swiper01 = new Swiper(".fv-swiper .swiper", {
