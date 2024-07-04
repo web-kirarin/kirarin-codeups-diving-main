@@ -115,6 +115,7 @@
   @include mq("md") {
     right: 0;
     background-position: right;
+    background-size: cover;
     animation: slide-up-right 1.5s forwards;
     animation-delay: 0.8s;
   }
