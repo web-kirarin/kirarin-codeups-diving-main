@@ -4,7 +4,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".js-hamburger").toggleClass("is-active");
     $(".js-sp-nav").toggleClass("is-active");
   });
-  //ローディングアニメーション
+  //ローディングアニメーションとスライダー1個目
   $(window).on("load", function () {
     const fadeOutLoad = () => new Promise((resolve) => {
         $(".js-load").fadeOut(1000, resolve);
@@ -58,10 +58,32 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         .then(startAnimations)
         .then(hideLoaderShowContent)
         .then(() => {
+            // スライダーの初期化
+            const swiper01 = new Swiper(".fv-swiper .swiper", {
+                loop: true,
+                effect: "fade",
+                speed: 3000,
+                allowTouchMove: false,
+                autoplay: {
+                    delay: 3000,
+                },
+                on: {
+                    resize: function () {
+                        swiper01.autoplay.start();
+                    }
+                }
+            });
+
             // 全体のローディングアニメーションを削除
             const loadingElement = document.querySelector('.loading');
             if (loadingElement && loadingElement.parentNode) {
                 loadingElement.parentNode.removeChild(loadingElement);
+            }
+
+            // クラス js-content の display を none に設定
+            const contentElement = document.querySelector('.js-content');
+            if (contentElement) {
+                contentElement.style.display = 'none';
             }
         })
         .catch((error) => {
@@ -70,24 +92,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 });
 
 
-
-
-
-  //スライダー
-  const swiper01 = new Swiper(".fv-swiper .swiper", {
-    loop: true,
-    effect: "fade",
-    speed: 3000,
-    allowTouchMove: false,
-    autoplay: {
-      delay: 3000,
-    },
-    on: {
-      resize: function () {
-        swiper.autoplay.start();
-      }
-    }
-  });
 
   //スライダー2個目
   const swiper02 = new Swiper(".cp-swiper .swiper", {
