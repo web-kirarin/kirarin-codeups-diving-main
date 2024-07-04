@@ -113,7 +113,7 @@
   @include mq("md") {
     width: 50%;
     left: 0;
-    background-position: -20% 50%;
+    background-position: left;
     animation: slide-up-left 1.5s forwards;
   }
 }
