@@ -58,8 +58,9 @@
   height: 100%;
   background: $white;
   display: none;
-  z-index: 1000;
+  z-index: 2000;
   transition: opacity 0.5s ease;
+
   @include mq("md") {
     flex-direction: column;
     justify-content: center;
@@ -70,7 +71,8 @@
 .loading__container {
   position: relative;
   width: 100%;
-  height: 50%;
+  height: 100vh;
+
   @include mq("md") {
     display: flex;
     justify-content: center;
@@ -90,9 +92,12 @@
   transition: bottom 1.5s ease;
 
   @include mq("md") {
-  background-image: url('../images/common/fv-pc-img1.jpg');
-  width: 50%;
-  height: 100%;
+    background-image: url('../images/common/fv-pc-img1.jpg');
+    width: 50%;
+    height: 100%;
+    background-size: cover;
+    animation-play-state: paused;
+    transition: right 1.5s ease; // add transition for right
   }
 }
 
@@ -117,13 +122,14 @@
 
 @keyframes slide-up-left {
   to {
-      bottom: 0;
+    bottom: 0;
   }
 }
 
 @keyframes slide-up-right {
   to {
-      bottom: 0;
+    bottom: 0;
+    right: 0; // ensure right transition
   }
 }
 
@@ -141,13 +147,14 @@
 
 @keyframes slide-up-top {
   to {
-      top: 0;
+    top: 0;
   }
 }
 
 @keyframes slide-up-bottom {
   to {
-      top: 50%;
+    bottom: 50%; // ensure bottom transition
+    top: 50%;
   }
 }
 
