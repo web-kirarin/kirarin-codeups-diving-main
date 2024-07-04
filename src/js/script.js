@@ -48,7 +48,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             if (loader) {
                 loader.style.opacity = '0';
                 setTimeout(() => {
-                    loader.style.display = 'none';
+                    if (loader.parentNode) {
+                        loader.parentNode.removeChild(loader); // Remove loader from DOM
+                    }
                     if (content) {
                         content.style.display = 'block';
                     } else {
@@ -60,7 +62,20 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                         } else {
                             console.error('Overlay text element not found');
                         }
-                        resolve();
+                        if (turtleImage) {
+                            setTimeout(() => {
+                                turtleImage.classList.add('fade-out');
+                                setTimeout(() => {
+                                    if (turtleImage.parentNode) {
+                                        turtleImage.parentNode.removeChild(turtleImage); // Remove turtle image from DOM
+                                    }
+                                    resolve();
+                                }, 1500); // Wait for the fade-out to complete
+                            }, 3000); // Time before fading out the turtle image
+                        } else {
+                            console.error('Turtle image element not found');
+                            resolve();
+                        }
                     }, 500); // Delay to show overlay text
                 }, 500); // Adjust the fade-out duration if needed
             } else {
@@ -78,11 +93,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             console.error('An error occurred:', error);
         });
 });
-
-
-
-
-
 
 
   //スライダー
