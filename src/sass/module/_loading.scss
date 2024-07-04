@@ -90,7 +90,7 @@
   bottom: -100%;
   width: 100%;
   height: 50%;
-  background-image: url('../images/common/fv-sp-img1.jpg');
+  background-image: url('../images/common/loading-sp-img.jpg');
   background-size: cover;
   animation-play-state: paused;
   transition: bottom 1.5s ease;
@@ -98,7 +98,7 @@
 
 
   @include mq("md") {
-    background-image: url('../images/common/fv-pc-img1.jpg');
+    background-image: url('../images/common/loading-pc-img.jpg');
     width: 50%;
     height: 100%;
     background-size: cover;

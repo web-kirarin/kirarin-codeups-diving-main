@@ -13,28 +13,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     const showLoader = () => {
         return new Promise((resolve) => {
             const loader = document.querySelector('.js-loader');
-            if (loader) {
-                loader.style.display = 'flex';
-                resolve();
-            } else {
-                console.error('Loader element not found');
-                resolve(); // Resolve even if there's an error to continue the process
-            }
+            loader.style.display = 'flex';
+            resolve();
         });
     };
 
     const startAnimations = () => {
         return new Promise((resolve) => {
             const turtleImages = document.querySelectorAll('.loading__turtle-image');
-            if (turtleImages.length === 4) {
-                turtleImages.forEach((image) => {
-                    image.style.animationPlayState = 'running';
-                });
-                setTimeout(resolve, 3000); // Wait for the animations to complete
-            } else {
-                console.error('Not all turtle images were found');
-                resolve(); // Resolve even if there's an error to continue the process
-            }
+            turtleImages.forEach((image) => {
+                image.style.animationPlayState = 'running';
+            });
+            setTimeout(resolve, 3000); // Wait for the animations to complete
         });
     };
 
@@ -45,43 +35,21 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             const overlayText = document.querySelector('.js-overlay-text');
             const turtleImage = document.querySelector('.loading__turtle-full-image');
 
-            if (loader) {
-                loader.style.opacity = '0';
+            loader.style.opacity = '0';
+            setTimeout(() => {
+                loader.style.display = 'none'; // Hide loader instead of removing it
+                content.style.display = 'block';
                 setTimeout(() => {
-                    if (loader.parentNode) {
-                        loader.parentNode.removeChild(loader); // Remove loader from DOM
-                    }
-                    if (content) {
-                        content.style.display = 'block';
-                    } else {
-                        console.error('Content element not found');
-                    }
+                    overlayText.style.opacity = '1';
                     setTimeout(() => {
-                        if (overlayText) {
-                            overlayText.style.opacity = '1';
-                        } else {
-                            console.error('Overlay text element not found');
-                        }
-                        if (turtleImage) {
-                            setTimeout(() => {
-                                turtleImage.classList.add('fade-out');
-                                setTimeout(() => {
-                                    if (turtleImage.parentNode) {
-                                        turtleImage.parentNode.removeChild(turtleImage); // Remove turtle image from DOM
-                                    }
-                                    resolve();
-                                }, 1500); // Wait for the fade-out to complete
-                            }, 3000); // Time before fading out the turtle image
-                        } else {
-                            console.error('Turtle image element not found');
+                        turtleImage.classList.add('fade-out');
+                        setTimeout(() => {
+                            turtleImage.style.display = 'none'; // Hide turtle image instead of removing it
                             resolve();
-                        }
-                    }, 500); // Delay to show overlay text
-                }, 500); // Adjust the fade-out duration if needed
-            } else {
-                console.error('Loader element not found');
-                resolve(); // Resolve even if there's an error to continue the process
-            }
+                        }, 1500); // Wait for the fade-out to complete
+                    }, 3000); // Time before fading out the turtle image
+                }, 500); // Delay to show overlay text
+            }, 500); // Adjust the fade-out duration if needed
         });
     };
 
@@ -89,10 +57,20 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         .then(showLoader)
         .then(startAnimations)
         .then(hideLoaderShowContent)
+        .then(() => {
+            // 全体のローディングアニメーションを削除
+            const loadingElement = document.querySelector('.loading');
+            if (loadingElement && loadingElement.parentNode) {
+                loadingElement.parentNode.removeChild(loadingElement);
+            }
+        })
         .catch((error) => {
             console.error('An error occurred:', error);
         });
 });
+
+
+
 
 
   //スライダー
