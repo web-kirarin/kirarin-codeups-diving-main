@@ -105,24 +105,18 @@
   background-size: cover;
   animation-play-state: paused;
   transition: bottom 1.5s ease;
-  background-position: 50% 50%;
 
 
   @include mq("md") {
     background-image: url('../images/common/loading-pc-img.jpg');
     width: 50%;
     height: 100%;
-    background-size: cover;
-    background-position: 50% 50%;
-    animation-play-state: paused;
-    transition: right 1.5s ease; // add transition for right
   }
 }
 
 .loading__turtle-image-left {
 
   @include mq("md") {
-    width: 50%;
     left: 0;
     background-position: left;
     animation: slide-up-left 1.5s forwards;
@@ -132,7 +126,6 @@
 .loading__turtle-image-right {
 
   @include mq("md") {
-    width: 50%;
     right: 0;
     background-position: right;
     animation: slide-up-right 1.5s forwards;
@@ -149,7 +142,6 @@
 @keyframes slide-up-right {
   to {
     bottom: 0;
-    right: 0; // ensure right transition
   }
 }
 
