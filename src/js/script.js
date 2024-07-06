@@ -49,12 +49,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                 setTimeout(() => {
                     whiteBg.style.opacity = '0'; // 白い背景をフェードアウト
                     turtleImage.style.opacity = '0'; // turtleImageをフェードアウト
+                    content.style.opacity = '0'; // contentをフェードアウト
                     setTimeout(() => {
-                        whiteBg.style.display = 'none'; // 白い背景を非表示にする
-                        turtleImage.style.display = 'none'; // turtleImageを非表示にする
-                        document.querySelector('.loading').style.display = 'none'; // 全体のローディングを非表示にする
+                        if (whiteBg.parentNode) {
+                            whiteBg.parentNode.removeChild(whiteBg); // 白い背景をDOMから削除
+                        }
+                        if (turtleImage.parentNode) {
+                            turtleImage.parentNode.removeChild(turtleImage); // turtleImageをDOMから削除
+                        }
+                        if (content.parentNode) {
+                            content.parentNode.removeChild(content); // contentをDOMから削除
+                        }
+                        const loading = document.querySelector('.loading');
+                        if (loading && loading.parentNode) {
+                            loading.parentNode.removeChild(loading); // 全体のローディングをDOMから削除
+                        }
                         resolve();
-                    }, 500); // 白い背景とturtleImageのフェードアウトを待つ
+                    }, 500); // 白い背景とturtleImageとcontentのフェードアウトを待つ
                 }, 1000); // Wait for the fade-out to complete
             }, 500); // Delay before fading out the turtle image
         }, 500); // Adjust the fade-out duration if needed
@@ -100,6 +111,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             console.error('An error occurred:', error);
         });
 });
+
 
 
 
