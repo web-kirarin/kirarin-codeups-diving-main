@@ -10,14 +10,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         $(".js-load").fadeOut(1000, resolve);
     });
 
-    const showWhiteBackground = () => {
-        return new Promise((resolve) => {
-            const whiteBackground = document.querySelector('.loading__white-background');
-            whiteBackground.style.display = 'block';
-            resolve();
-        });
-    };
-
     const showLoader = () => {
         return new Promise((resolve) => {
             const loader = document.querySelector('.js-loader');
@@ -62,7 +54,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     };
 
     fadeOutLoad()
-        .then(showWhiteBackground) // Show white background before loader
         .then(showLoader)
         .then(startAnimations)
         .then(hideLoaderShowContent)
@@ -94,18 +85,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             if (contentElement) {
                 contentElement.style.display = 'none';
             }
-
-            // クラス fv の display を block に設定
-            const fvElement = document.querySelector('.fv');
-            if (fvElement) {
-                fvElement.style.display = 'block';
-            }
         })
         .catch((error) => {
             console.error('An error occurred:', error);
         });
 });
-
 
 
 

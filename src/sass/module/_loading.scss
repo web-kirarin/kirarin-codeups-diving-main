@@ -2,7 +2,7 @@
 
 .loading {
   position: fixed;
-  z-index: 3000;
+  z-index: 1500;
   top: 0;
   left: 0;
   display: flex;
@@ -16,7 +16,7 @@
 
 .loading__title-wrap {
   position: absolute;
-  z-index: 10;
+  z-index: 1700;
   width: rem(248);
   font-family: $english-family;
   text-align: center;
@@ -50,17 +50,6 @@
   line-height: 1;
 }
 
-.loading__white-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: white;
-  z-index: 2000;
-  display: none; /* 初期状態では非表示 */
-}
-
 .loading__loader {
   position: fixed;
   top: 0;
@@ -69,8 +58,7 @@
   height: 100vh;
   background: $white;
   display: none;
-  flex-shrink: 0;
-  z-index: 2500;
+  z-index: 2000;
   transition: opacity 0.5s ease;
 
   @include mq("md") {
@@ -166,7 +154,6 @@
 
 @keyframes slide-up-bottom {
   to {
-    bottom: 50%; // ensure bottom transition
     top: 50%;
   }
 }
@@ -182,6 +169,7 @@
   width: 100%;
   height: 100vh;
   object-fit: cover;
+  z-index: 3000;
   transition: opacity 1.5s ease;
 }
 
@@ -207,4 +195,21 @@
     left: 50%;
     transform: translate(-50%, 41%);
   }
+}
+
+.loading__overlay-text-title {
+  font-size: rem(40);
+  font-weight: $normal;
+  letter-spacing: 0.54em;
+  line-height: 1;
+
+  @include mq("md") {
+    font-size: rem(80);
+    line-height: 1.25;
+  }
+}
+
+.loading__overlay-text-sub-title {
+  font-size: rem(20);
+  line-height: 1;
 }
