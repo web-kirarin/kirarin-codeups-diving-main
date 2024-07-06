@@ -6,56 +6,63 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
   //ローディングアニメーションとスライダー1個目
   $(window).on("load", function () {
+    const fadeOutText = () => new Promise((resolve) => {
+        $(".loading__title, .loading__sub-title").fadeOut(1000, resolve);
+    });
+
     const fadeOutLoad = () => new Promise((resolve) => {
         $(".js-load").fadeOut(1000, resolve);
     });
 
-    const showLoader = () => {
-        return new Promise((resolve) => {
-            const loader = document.querySelector('.js-loader');
-            loader.style.display = 'flex';
-            resolve();
+    const showLoader = () => new Promise((resolve) => {
+        const loader = document.querySelector('.js-loader');
+        loader.style.display = 'flex';
+        resolve();
+    });
+
+    const startAnimations = () => new Promise((resolve) => {
+        const turtleImages = document.querySelectorAll('.loading__turtle-image');
+        turtleImages.forEach((image) => {
+            image.style.animationPlayState = 'running';
         });
-    };
+        setTimeout(resolve, 1500); // アニメーションの完了を待つ
+    });
 
-    const startAnimations = () => {
-        return new Promise((resolve) => {
-            const turtleImages = document.querySelectorAll('.loading__turtle-image');
-            turtleImages.forEach((image) => {
-                image.style.animationPlayState = 'running';
-            });
-            setTimeout(resolve, 3000); // Wait for the animations to complete
-        });
-    };
+    const showOverlayText = () => new Promise((resolve) => {
+        const overlayText = document.querySelector('.js-overlay-text');
+        overlayText.style.opacity = '1';
+        setTimeout(resolve, 500); // Overlay text display delay
+    });
 
-    const hideLoaderShowContent = () => {
-        return new Promise((resolve) => {
-            const loader = document.querySelector('.js-loader');
-            const content = document.querySelector('.js-content');
-            const overlayText = document.querySelector('.js-overlay-text');
-            const turtleImage = document.querySelector('.loading__turtle-full-image');
+    const hideLoaderShowContent = () => new Promise((resolve) => {
+        const loader = document.querySelector('.js-loader');
+        const content = document.querySelector('.js-content');
+        const turtleImage = document.querySelector('.loading__turtle-full-image');
+        const whiteBg = document.querySelector('.js-white-bg');
 
-            loader.style.opacity = '0';
+        loader.style.opacity = '0';
+        setTimeout(() => {
+            loader.style.display = 'none'; // ローダーを非表示にする
+            content.style.display = 'block'; // loading__content を表示
             setTimeout(() => {
-                loader.style.display = 'none'; // Hide loader instead of removing it
-                content.style.display = 'block';
+                turtleImage.classList.add('fade-out');
                 setTimeout(() => {
-                    overlayText.style.opacity = '1';
+                    whiteBg.style.opacity = '0'; // 白い背景をフェードアウト
                     setTimeout(() => {
-                        turtleImage.classList.add('fade-out');
-                        setTimeout(() => {
-                            turtleImage.style.display = 'none'; // Hide turtle image instead of removing it
-                            resolve();
-                        }, 1500); // Wait for the fade-out to complete
-                    }, 3000); // Time before fading out the turtle image
-                }, 500); // Delay to show overlay text
-            }, 500); // Adjust the fade-out duration if needed
-        });
-    };
+                        whiteBg.style.display = 'none'; // 白い背景を非表示にする
+                        document.querySelector('.loading').style.display = 'none'; // 全体のローディングを非表示にする
+                        resolve();
+                    }, 500); // 白い背景のフェードアウトを待つ
+                }, 1000); // Wait for the fade-out to complete
+            }, 500); // Delay before fading out the turtle image
+        }, 500); // Adjust the fade-out duration if needed
+    });
 
-    fadeOutLoad()
+    fadeOutText()
+        .then(fadeOutLoad)
         .then(showLoader)
         .then(startAnimations)
+        .then(showOverlayText)
         .then(hideLoaderShowContent)
         .then(() => {
             // スライダーの初期化
@@ -74,22 +81,25 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
                 }
             });
 
-            // 全体のローディングアニメーションを削除
-            const loadingElement = document.querySelector('.loading');
-            if (loadingElement && loadingElement.parentNode) {
-                loadingElement.parentNode.removeChild(loadingElement);
-            }
-
-            // クラス js-content の display を none に設定
+            // クラス js-content の display を block に設定
             const contentElement = document.querySelector('.js-content');
             if (contentElement) {
-                contentElement.style.display = 'none';
+                contentElement.style.display = 'block';
+            }
+
+            // クラス fv の display を block に設定
+            const fvElement = document.querySelector('.fv');
+            if (fvElement) {
+                fvElement.style.display = 'block';
             }
         })
         .catch((error) => {
             console.error('An error occurred:', error);
         });
 });
+
+
+
 
 
 
