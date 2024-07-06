@@ -7,7 +7,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   //ローディングアニメーションとスライダー1個目
   $(window).on("load", function () {
     const fadeOutLoad = () => new Promise((resolve) => {
-        $(".js-load").fadeOut(1000, resolve);
+        $(".js-load").fadeOut(2000, resolve);
     });
 
     const showLoader = () => {
