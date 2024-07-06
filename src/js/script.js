@@ -43,16 +43,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         loader.style.opacity = '0';
         setTimeout(() => {
             loader.style.display = 'none'; // ローダーを非表示にする
-            content.style.display = 'block'; // loading__content を表示
+            content.style.display = 'block';
             setTimeout(() => {
                 turtleImage.classList.add('fade-out');
                 setTimeout(() => {
                     whiteBg.style.opacity = '0'; // 白い背景をフェードアウト
+                    content.style.opacity = '0'; // contentをフェードアウト
                     setTimeout(() => {
                         whiteBg.style.display = 'none'; // 白い背景を非表示にする
+                        content.style.display = 'none'; // contentを非表示にする
                         document.querySelector('.loading').style.display = 'none'; // 全体のローディングを非表示にする
                         resolve();
-                    }, 500); // 白い背景のフェードアウトを待つ
+                    }, 500); // 白い背景とcontentのフェードアウトを待つ
                 }, 1000); // Wait for the fade-out to complete
             }, 500); // Delay before fading out the turtle image
         }, 500); // Adjust the fade-out duration if needed
@@ -85,6 +87,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             const contentElement = document.querySelector('.js-content');
             if (contentElement) {
                 contentElement.style.display = 'block';
+                contentElement.style.opacity = '1'; // contentを表示
             }
 
             // クラス fv の display を block に設定
@@ -97,6 +100,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             console.error('An error occurred:', error);
         });
 });
+
 
 
 
