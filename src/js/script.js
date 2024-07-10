@@ -28,10 +28,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         setTimeout(resolve, 1500); // アニメーションの完了を待つ
     });
 
+    const showFullImage = () => new Promise((resolve) => {
+        const content = document.querySelector('.js-content');
+        content.style.display = 'block';
+        setTimeout(() => {
+            resolve();
+        }, 1500); // 全体画像表示後の遅延
+    });
+
     const showOverlayText = () => new Promise((resolve) => {
         const overlayText = document.querySelector('.js-overlay-text');
         overlayText.style.opacity = '1';
-        setTimeout(resolve, 500); // Overlay text display delay
+        setTimeout(resolve, 500); // Overlay text display delay (遅延を短く調整)
     });
 
     const hideLoaderShowContent = () => new Promise((resolve) => {
@@ -43,7 +51,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         loader.style.opacity = '0';
         setTimeout(() => {
             loader.style.display = 'none'; // ローダーを非表示にする
-            content.style.display = 'block';
             setTimeout(() => {
                 turtleImage.classList.add('fade-out');
                 setTimeout(() => {
@@ -75,6 +82,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         .then(fadeOutLoad)
         .then(showLoader)
         .then(startAnimations)
+        .then(showFullImage)
         .then(showOverlayText)
         .then(hideLoaderShowContent)
         .then(() => {
@@ -111,6 +119,9 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
             console.error('An error occurred:', error);
         });
 });
+
+
+
 
 
 
