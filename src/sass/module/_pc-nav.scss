@@ -19,6 +19,7 @@
 }
 
 .pc-nav__item a {
+  position: relative;
   height: inherit;
   color: $white;
   display: flex;
@@ -27,8 +28,25 @@
   justify-content: center;
   cursor: pointer;
   padding: 0 rem(20);
-
 }
+
+.pc-nav__item a::after {
+  content: '';
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: rem(2);
+  background: $white;
+  transition: all 0.3s;
+  transform: scale(0, 1);
+  transform-origin: center top;
+}
+
+.pc-nav__item a:hover::after {
+  transform: scale(1, 1);
+}
+
+
 
 .pc-nav__english {
   font-family: $english-family;
