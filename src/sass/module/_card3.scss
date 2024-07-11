@@ -15,7 +15,6 @@
 
 .card3__img {
   max-width: rem(151);
-  // align-self: flex-end;
   flex-shrink: 0;
 
   @include mq("md") {
