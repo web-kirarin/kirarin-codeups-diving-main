@@ -120,17 +120,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         });
 });
 
-
-
-
-
-
-
-
-
-
-
-
   //スライダー2個目
   const swiper02 = new Swiper(".cp-swiper .swiper", {
     loop: true,
