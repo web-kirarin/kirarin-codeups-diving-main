@@ -169,5 +169,20 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 });
 
+//resizeイベント
+$(window).resize(function () {
+  if (window.matchMedia("(min-width: 769px)").matches) {
+    closeDrawer();
+  }
+});
 
+function openDrawer() {
+  $(".js-sp-nav").fadeIn();
+  $(".js-hamburger").addClass("is-open");
+}
+
+function closeDrawer() {
+  $(".js-sp-nav").fadeOut();
+  $(".js-hamburger").removeClass("is-open");
+}
 
