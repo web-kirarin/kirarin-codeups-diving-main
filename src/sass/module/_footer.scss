@@ -16,7 +16,7 @@
   @include mq("md") {
     display: flex;
     align-items: center;
-    column-gap: rem(40);
+    column-gap: rem(28);
   }
 }
 
@@ -64,7 +64,7 @@
   margin-top: rem(28);
 
   @include mq("md") {
-    column-gap: rem(158);
+    column-gap: rem(146);
     margin-top: rem(12);
   }
 }
@@ -93,6 +93,7 @@
 
   @include mq("md") {
     margin-top: 0;
+    width: rem(155);
   }
 }
 
