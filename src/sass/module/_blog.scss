@@ -15,6 +15,7 @@
   align-items: center;
   flex-direction: column;
   gap: rem(40);
+  flex-wrap: wrap;
 
   @include mq("md") {
     margin-top: rem(80);
