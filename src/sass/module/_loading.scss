@@ -20,10 +20,10 @@
   width: rem(248);
   font-family: $english-family;
   text-align: center;
-  top: 44%;
+  top: 41.5%;
   left: 50%;
   color: $green;
-  transform: translate(-50%, 44%);
+  transform: translate(-50%, 41.5%);
 
   @include mq("md") {
     width: rem(496);
@@ -36,7 +36,7 @@
 .loading__title {
   font-size: rem(40);
   font-weight: $normal;
-  letter-spacing: 0.54em;
+  letter-spacing: 0.52em;
   line-height: 1;
 
   @include mq("md") {
@@ -48,6 +48,7 @@
 .loading__sub-title {
   font-size: rem(20);
   line-height: 1;
+  margin-top: rem(4);
 }
 
 .loading__white-bg {
@@ -205,10 +206,10 @@
   width: rem(248);
   font-family: $english-family;
   text-align: center;
-  top: 44%;
+  top: 41.5%;
   left: 50%;
   color: $white;
-  transform: translate(-50%, 44%);
+  transform: translate(-50%, 41.5%);
   opacity: 0;
   transition: opacity 1s ease;
 
@@ -223,7 +224,7 @@
 .loading__overlay-text-title {
   font-size: rem(40);
   font-weight: $normal;
-  letter-spacing: 0.54em;
+  letter-spacing: 0.52em;
   line-height: 1;
 
   @include mq("md") {
@@ -235,4 +236,5 @@
 .loading__overlay-text-sub-title {
   font-size: rem(20);
   line-height: 1;
+  margin-top: rem(4);
 }

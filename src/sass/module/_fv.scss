@@ -30,9 +30,9 @@
   font-family: $english-family;
   color: $white;
   text-align: center;
-  top: 44%;
+  top: 41.5%;
   left: 50%;
-  transform: translate(-50%, 44%);
+  transform: translate(-50%, 41.5%);
 
   @include mq("md") {
     width: rem(496);
@@ -45,7 +45,7 @@
 .fv__title {
   font-size: rem(40);
   font-weight: $normal;
-  letter-spacing: 0.54em;
+  letter-spacing: 0.52em;
   line-height: 1;
 
   @include mq("md") {
@@ -57,4 +57,5 @@
 .fv__sub-title {
   font-size: rem(20);
   line-height: 1;
+  margin-top: rem(4);
 }
