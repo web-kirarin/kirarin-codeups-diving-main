@@ -44,6 +44,11 @@ div.information__image div.color {
 div.information__image img {
   display: block;
   width: 100%;
+  aspect-ratio: 345 / 227;
+
+  @include mq("md") {
+    aspect-ratio: 540 / 356;
+  }
 }
 
 
