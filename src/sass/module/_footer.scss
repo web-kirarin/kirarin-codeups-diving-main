@@ -62,6 +62,8 @@
   column-gap: rem(4);
   margin-top: rem(28);
   flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
 
   @include mq("md") {
     column-gap: rem(146);
