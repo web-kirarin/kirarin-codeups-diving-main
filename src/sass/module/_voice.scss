@@ -16,11 +16,15 @@
   align-items: center;
   gap: rem(40);
   flex-wrap: wrap;
+  margin-left: auto;
+  margin-right: auto;
 
   @include mq("md") {
   margin-top: rem(30);
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
   }
 }
 

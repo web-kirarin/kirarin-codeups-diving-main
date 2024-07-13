@@ -6,10 +6,6 @@
   padding-left: rem(22);
   line-height: 1.125;
   font-size: rem(16);
-
-  @include mq("md") {
-    width: rem(200);
-  }
 }
 
 .nav-title::before {

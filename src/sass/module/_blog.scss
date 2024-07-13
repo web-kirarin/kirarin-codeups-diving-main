@@ -20,7 +20,7 @@
   @include mq("md") {
     margin-top: rem(80);
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 }
 
