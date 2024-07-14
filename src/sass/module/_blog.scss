@@ -10,11 +10,11 @@
 }
 
 .blog__cards {
-  margin-top: rem(24);
+  margin-top: rem(32);
   display: flex;
   align-items: center;
   flex-direction: column;
-  gap: rem(40);
+  gap: rem(39);
   flex-wrap: wrap;
 
   @include mq("md") {
