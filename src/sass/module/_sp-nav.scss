@@ -19,7 +19,7 @@
 
 .sp-nav__flex {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 
@@ -28,11 +28,13 @@
   margin-left: rem(15);
   display: flex;
   flex-direction: column;
-  row-gap: rem(16);
+  row-gap: rem(4);
   color: $white;
   font-weight: $normal;
   flex-wrap: wrap;
+  flex-shrink: 0;
 }
+
 
 .sp-nav__item {
   display: flex;
