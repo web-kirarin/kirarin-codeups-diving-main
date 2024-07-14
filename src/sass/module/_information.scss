@@ -1,12 +1,12 @@
 @use "global" as *;
 
 .information {
-  padding: rem(80) 0 rem(80);
+  padding: rem(80) 0 rem(84);
   background-color: $green3;
 }
 
 .information__flex {
-  margin-top: rem(24);
+  margin-top: rem(32);
   display: flex;
   flex-direction: column;
   row-gap: rem(24);
