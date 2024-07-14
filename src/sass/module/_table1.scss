@@ -27,6 +27,10 @@
   margin-top: rem(8);
 }
 
+.table1__line:not(:first-of-type) {
+  margin-top: rem(16);
+}
+
 .table1__line > td {
   font-family: $base-font-family;
   font-size: rem(14);
