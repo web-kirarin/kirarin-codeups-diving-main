@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .about-us {
-  padding: rem(40) 0 rem(70);
+  padding: rem(40) 0 rem(73);
 
   @include mq("md") {
   padding: rem(70) 0 rem(164);
@@ -44,7 +44,7 @@
 }
 
 .about-us__img.about-us__img--down {
-  width: 77%;
+  width: 82%;
   height: auto;
   aspect-ratio: 281 / 186;
   background-image: url(../images/common/about-us-pc-img2.jpg);
@@ -52,7 +52,7 @@
   background-position: center center;
   background-size: contain;
   margin-left: rem(64);
-  margin-top: -40%;
+  margin-top: -49%;
 
   @include mq("md") {
     width: 83%;
@@ -113,7 +113,7 @@
 }
 
 .about-us__button {
-  margin-top: rem(50);
+  margin-top: rem(28);
 
   @include mq("md") {
     margin-top: rem(40);
