@@ -9,7 +9,7 @@
 }
 
 .about-us__content {
-  margin-top: rem(24);
+  margin-top: rem(30);
   margin-left: auto;
   margin-right: auto;
 
@@ -28,7 +28,7 @@
 
 .about-us__img.about-us__img--up {
   position: relative;
-  width: 34%;
+  width: 37%;
   height: auto;
   aspect-ratio: 128 / 194;
   z-index: 1;
@@ -44,7 +44,7 @@
 }
 
 .about-us__img.about-us__img--down {
-  width: 75%;
+  width: 77%;
   height: auto;
   aspect-ratio: 281 / 186;
   background-image: url(../images/common/about-us-pc-img2.jpg);
