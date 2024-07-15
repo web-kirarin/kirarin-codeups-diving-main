@@ -28,7 +28,11 @@
 }
 
 .table1__line:not(:first-of-type) {
-  margin-top: rem(16);
+  margin-top: rem(40);
+}
+
+.table1__table tr {
+  padding: rem(10) 0;
 }
 
 .table1__line > td {
