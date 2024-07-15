@@ -23,16 +23,12 @@
   margin-top: rem(4);
 }
 
-.table1__line {
-  margin-top: rem(8);
+.table1__line:first-of-type {
+  padding-top: rem(8);
 }
 
-.table1__line:not(:first-of-type) {
-  margin-top: rem(40);
-}
-
-.table1__table tr {
-  padding: rem(10) 0;
+.table1__line:not(:first-of-type) > td {
+  padding-top: rem(6);
 }
 
 .table1__line > td {
