@@ -2,7 +2,7 @@
 
 .price {
   position: relative;
-  padding: rem(80) 0 rem(80);
+  padding: rem(80) 0 rem(81);
   background-color: $green3;
 
   @include mq("md") {
@@ -80,7 +80,7 @@ div.price__pc-img img {
 }
 
 .price__button {
-  margin-top: rem(38);
+  margin-top: rem(37);
 
   @include mq("md") {
     margin-top: rem(80);

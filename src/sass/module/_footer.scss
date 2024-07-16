@@ -2,7 +2,7 @@
 
 .footer {
   background-color: $green;
-  padding: rem(49) 0 rem(51) 0;
+  padding: rem(49) 0 rem(53) 0;
 
   @include mq("md") {
     padding: rem(80) 0;
@@ -75,11 +75,12 @@
   display: flex;
   flex-direction: column;
   column-gap: 0;
-  row-gap: rem(8);
+  row-gap: rem(13.5);
 
   @include mq("md") {
     flex-direction: row;
     column-gap: rem(146);
+    row-gap: 0;
   }
 }
 
@@ -90,9 +91,11 @@
   font-weight: $normal;
   flex-wrap: wrap;
   flex-shrink: 0;
+  row-gap: rem(16.5);
 
   @include mq("md") {
     margin-top: 0;
+    row-gap: 0;
   }
 }
 
@@ -103,14 +106,14 @@
 }
 
 .footer__title {
-  padding-top: rem(12);
+  padding-top: rem(11.5);
   padding-right: rem(12);
-  padding-bottom: rem(12);
+  padding-bottom: rem(11.5);
 }
 
 .footer__subtitle {
-  padding-top: rem(10);
-  padding-bottom: rem(10);
+  padding-top: rem(10.5);
+  padding-bottom: rem(9);
   padding-left: rem(22);
   padding-right: rem(12);
   font-size: rem(16);
@@ -120,7 +123,7 @@
 }
 
 .footer__copyright-wrapper {
-  margin-top: rem(40);
+  margin-top: rem(26);
   text-align: center;
 
   @include mq("md") {
