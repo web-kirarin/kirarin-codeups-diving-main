@@ -2,7 +2,7 @@
 
 .footer {
   background-color: $green;
-  padding: rem(48) 0 rem(51) 0;
+  padding: rem(49) 0 rem(51) 0;
 
   @include mq("md") {
     padding: rem(80) 0;
@@ -12,6 +12,7 @@
 
 .footer__top-flex {
   display: block;
+  align-items: flex-start;
 
   @include mq("md") {
     display: flex;
@@ -21,7 +22,7 @@
 }
 
 .footer__logo {
-  width: rem(102);
+  width: rem(119);
 
   @include mq("md") {
     width: rem(200);
@@ -62,7 +63,6 @@
   column-gap: rem(4);
   margin-top: rem(28);
   flex-shrink: 0;
-  align-items: center;
   justify-content: center;
 
   @include mq("md") {
@@ -74,8 +74,8 @@
 .footer__flex2 {
   display: flex;
   flex-direction: column;
-  row-gap: rem(16);
   column-gap: 0;
+  row-gap: rem(8);
 
   @include mq("md") {
     flex-direction: row;
@@ -86,7 +86,6 @@
 .footer__items {
   display: flex;
   flex-direction: column;
-  row-gap: rem(16);
   color: $white;
   font-weight: $normal;
   flex-wrap: wrap;
@@ -110,8 +109,8 @@
 }
 
 .footer__subtitle {
-  padding-top: rem(12);
-  padding-bottom: rem(12);
+  padding-top: rem(10);
+  padding-bottom: rem(10);
   padding-left: rem(22);
   padding-right: rem(12);
   font-size: rem(16);
