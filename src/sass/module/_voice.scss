@@ -57,10 +57,11 @@
 
   @include mq("md") {
     bottom: rem(73);
-    right: rem(45);
+    right: rem(180);
     display: block;
-    width: rem(301);
-    height: rem(138);
+    width: rem(71);
+    height: rem(162);
+    flex-shrink: 0;
     background-image: url(../images/common/voice-seahorse-img.png);
     background-repeat: no-repeat;
     background-position: center center;
