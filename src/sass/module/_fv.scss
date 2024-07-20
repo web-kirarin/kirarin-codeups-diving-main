@@ -36,9 +36,9 @@
 
   @include mq("md") {
     width: rem(496);
-    top: 41%;
+    top: 37%;
     left: 50%;
-    transform: translate(-50%, 41%);
+    transform: translate(-50%, 37%);
   }
 }
 
@@ -50,7 +50,7 @@
 
   @include mq("md") {
     font-size: rem(80);
-    line-height: 1.25;
+    line-height: 1.23;
   }
 }
 
@@ -58,4 +58,8 @@
   font-size: rem(20);
   line-height: 1;
   margin-top: rem(4);
+
+  @include mq("md") {
+    margin-top: 0;
+  }
 }
