@@ -5,7 +5,7 @@
   padding: rem(79) 0 0;
 
   @include mq("md") {
-    padding: rem(100) 0 rem(70);
+    padding: rem(100) 0 0;
   }
 }
 
@@ -18,9 +18,11 @@
   flex-wrap: wrap;
 
   @include mq("md") {
-    margin-top: rem(80);
+    margin-top: rem(83);
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap: rem(40);
+
   }
 }
 
@@ -28,7 +30,7 @@
   margin-top: rem(40);
 
   @include mq("md") {
-    margin-top: rem(80);
+    margin-top: rem(79);
   }
 }
 
