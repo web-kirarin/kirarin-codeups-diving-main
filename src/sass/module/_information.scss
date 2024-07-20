@@ -3,6 +3,11 @@
 .information {
   padding: rem(80) 0 rem(84);
   background-color: $green3;
+
+  @include mq("md") {
+    padding: rem(100) 0 rem(76);
+
+  }
 }
 
 .information__flex {
@@ -12,13 +17,15 @@
   row-gap: rem(24);
   column-gap: 0;
   align-items: baseline;
+  margin-left: 0;
 
   @include mq("md") {
-    margin-top: rem(40);
+    margin-top: rem(43);
     flex-direction: row;
     column-gap: rem(48);
     row-gap: 0;
     align-items: center;
+    margin-left: rem(22);
   }
 }
 
