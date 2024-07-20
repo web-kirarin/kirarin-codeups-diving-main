@@ -8,8 +8,8 @@
   background-color: $white;
 
   @include mq("md") {
-  padding: rem(24);
-  max-width: rem(520);
+    padding: rem(24);
+    max-width: rem(520);
   }
 }
 
@@ -18,7 +18,7 @@
   flex-shrink: 0;
 
   @include mq("md") {
-  max-width: rem(180);
+    max-width: rem(180);
   }
 }
 
@@ -51,6 +51,10 @@ div.card3__img img {
   display: flex;
   gap: rem(13);
   align-items: flex-end;
+
+  @include mq("md") {
+    gap: rem(15);
+  }
 }
 
 .card3__top {
@@ -115,6 +119,7 @@ div.card3__img img {
 
   @include mq("md") {
     width: rem(276);
+    margin: rem(1) 0 0 0;
   }
 }
 

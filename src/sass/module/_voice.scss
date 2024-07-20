@@ -5,7 +5,7 @@
   padding: rem(82) 0 rem(83);
 
   @include mq("md") {
-  padding: rem(140) 0 rem(140);
+  padding: rem(145) 0 rem(140);
   }
 }
 
@@ -20,9 +20,9 @@
   margin-right: auto;
 
   @include mq("md") {
-  margin-top: rem(30);
+  margin-top: rem(33);
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   margin-left: auto;
   margin-right: auto;
   }
@@ -40,7 +40,7 @@
   position: absolute;
 
   @include mq("md") {
-    top: rem(20);
+    top: rem(23);
     left: rem(100);
     display: block;
     width: rem(301);
