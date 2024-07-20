@@ -15,7 +15,7 @@
 
   @include mq("md") {
     position: relative;
-    margin-top: rem(40);
+    margin-top: rem(43);
     max-width: 75vw;
     margin-left: auto;
     margin-right: auto;
@@ -55,11 +55,11 @@
   margin-top: -49%;
 
   @include mq("md") {
-    width: 83%;
+    width: 81.5%;
     height: auto;
     aspect-ratio: 880 / 581;
-    margin-left: 17%;
-    margin-top: -50%;
+    margin-left: 18.5%;
+    margin-top: -48.5%;
   }
 }
 
@@ -69,8 +69,8 @@
 
   @include mq("md") {
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 30.5%;
+    left: 18.5%;
     margin-top: 0;
     z-index: 20;
     display: flex;
@@ -129,7 +129,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  top: 87%;
-  left: 90%;
+  top: 86.5%;
+  left: 91%;
 }
 }
