@@ -41,9 +41,9 @@
 
   @include mq("md") {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
-    padding: rem(80) rem(112) rem(80) rem(50);
+    padding: rem(80) rem(100) rem(80) rem(45);
   }
 }
 
