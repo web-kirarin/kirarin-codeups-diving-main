@@ -16,16 +16,18 @@
 
   @include mq("md") {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     column-gap: rem(28);
   }
 }
 
 .footer__logo {
   width: rem(119);
+  margin-left: 0;
 
   @include mq("md") {
     width: rem(200);
+    margin-left: rem(30);
   }
 }
 
@@ -66,8 +68,9 @@
   justify-content: center;
 
   @include mq("md") {
-    column-gap: rem(146);
+    column-gap: rem(90);
     margin-top: rem(12);
+    // justify-content: space-around;
   }
 }
 
@@ -79,7 +82,7 @@
 
   @include mq("md") {
     flex-direction: row;
-    column-gap: rem(146);
+    column-gap: rem(110);
     row-gap: 0;
   }
 }
