@@ -41,9 +41,12 @@
 
   @include mq("md") {
     display: flex;
-    justify-content: space-around;
+    max-width: rem(1080);
+    margin-left: auto;
+    margin-right: auto;
+    gap:  rem(82);
     box-shadow: rem(4) rem(4) rem(10) 0 rgba(0, 0, 0, 0.25);
-    padding: rem(80) rem(100) rem(80) rem(45);
+    padding: rem(80) rem(25) rem(90) rem(25);
   }
 }
 
