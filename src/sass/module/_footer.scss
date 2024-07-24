@@ -149,7 +149,7 @@
   text-align: center;
 
   @include mq("md") {
-    margin-top: rem(67);
+    margin-top: rem(62);
   }
 }
 
@@ -157,5 +157,12 @@
   padding: 0 rem(14);
   font-family: $english-family;
   font-size: rem(12);
+  font-style: normal;
+  font-weight: $normal;
   color: $white;
+
+  @include mq("md") {
+    font-size: rem(14);
+
+  }
 }
