@@ -17,17 +17,26 @@
   @include mq("md") {
     display: flex;
     align-items: flex-end;
-    column-gap: rem(28);
+    column-gap: rem(38);
   }
 }
 
-.footer__logo {
+.footer__logo--link {
+  display: block;
   width: rem(119);
   margin-left: 0;
 
   @include mq("md") {
     width: rem(200);
-    margin-left: rem(30);
+    margin-left: rem(26);
+  }
+}
+
+.footer__logo {
+  width: rem(119);
+
+  @include mq("md") {
+    width: rem(200);
   }
 }
 
