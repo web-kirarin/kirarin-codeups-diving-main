@@ -1,20 +1,23 @@
 @use "global" as *;
 
 .sp-nav {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100vh;
+  visibility: hidden;
+  opacity: 0;
   background-color: $green;
   z-index: 8000;
   padding: rem(21) 0 rem(111);
   overflow-y: scroll;
+  transition: 0.6s visibility, 0.6s opacity ease-in-out;
 }
 
-.sp-nav.is-active {
-  display: block;
+.sp-nav.fade {
+  visibility: visible;
+  opacity: 1;
 }
 
 .sp-nav__flex {
