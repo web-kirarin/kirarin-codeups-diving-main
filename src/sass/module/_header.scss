@@ -31,23 +31,23 @@
 
 .header__logo--link {
   display: block;
-  position: fixed;
-  z-index: 9999;
-  top: rem(21);
-  left: rem(15);
   width: rem(106);
 
   @include mq("md") {
-    top: rem(20);
-    left: rem(40);
     width: rem(139);
   }
 }
 
 .header__logo {
+  position: fixed;
+  z-index: 9999;
+  left: rem(15);
+  top: rem(21);
   width: rem(106);
 
   @include mq("md") {
+    top: rem(20);
+    left: rem(40);
     width: rem(139);
   }
 }
