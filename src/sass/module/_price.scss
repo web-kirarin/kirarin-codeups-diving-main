@@ -18,6 +18,7 @@
 .price__sp-img img {
   width: 100%;
   aspect-ratio: 345 / 227;
+  object-fit: cover;
 }
 
 .price__flex {
@@ -54,6 +55,7 @@
 .price__pc-img img {
   width: 100%;
   aspect-ratio: 492 / 746;
+  object-fit: cover;
 }
 
 div.price__pc-img {
