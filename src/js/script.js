@@ -132,13 +132,17 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     },
     breakpoints: {
       600: {
-        slidesPerView: 2.2,
+        slidesPerView: 2,
         spaceBetween: 30,
       },
       769: {
+        slidesPerView: 3,
+        spaceBetween: 40,
+      },
+      1300: {
         slidesPerView: 3.5,
         spaceBetween: 40,
-      }
+      },
     },
     navigation: {
       nextEl: ".cp-swiper-button-next",
