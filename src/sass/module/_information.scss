@@ -52,6 +52,7 @@ div.information__image img {
   display: block;
   width: 100%;
   aspect-ratio: 345 / 227;
+  object-fit: cover;
 
   @include mq("md") {
     aspect-ratio: 540 / 356;
