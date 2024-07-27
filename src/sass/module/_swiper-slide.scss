@@ -3,6 +3,7 @@
 .fv__slide.swiper-slide picture,
 .fv__slide.swiper-slide img {
   height: 100vh;
+  min-height: rem(400);
 }
 
 .fv__slide.swiper-slide img {
