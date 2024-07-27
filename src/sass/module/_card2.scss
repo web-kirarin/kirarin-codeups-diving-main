@@ -5,6 +5,7 @@
   max-width: rem(333);
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   background-color: $white;
+  height: 100%;
 }
 
 .card2__img {
@@ -19,7 +20,6 @@
 }
 
 .card2__body {
-  background-color: $white;
   padding: rem(2) rem(16) rem(24) rem(16);
 }
 
