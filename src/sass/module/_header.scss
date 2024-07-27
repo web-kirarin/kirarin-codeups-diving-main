@@ -8,10 +8,15 @@
   left: 0;
   z-index: 1000;
   background-color: rgba($green2, 0.68);
+  transition: 0.3s background-color;
 
   @include mq("md") {
     height: rem(90);
   }
+}
+
+.header.scrolled {
+  background-color: $gray3;
 }
 
 .header__inner {

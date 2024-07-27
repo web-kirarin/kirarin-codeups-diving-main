@@ -4,121 +4,140 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".js-hamburger").toggleClass("is-active");
     $(".js-sp-nav").toggleClass("is-active");
   });
+  // ページ読み込み完了後に実行されるコード
+  document.addEventListener("scroll", function () {
+    // トップページのヘッダー用
+    var header = document.querySelector('.header');
+    if (window.scrollY > window.innerHeight) {//メインビューの高さを超えたら
+      header.classList.add('scrolled');
+    } else if (header) {
+      header.classList.remove('scrolled');
+    }
+
+    // 下層ページのヘッダー用
+    var subHeader = document.querySelector('.sub-header');
+    if (subHeader && window.scrollY > 550) {
+      subHeader.classList.add('scrolled');
+    } else if (subHeader) {
+      subHeader.classList.remove('scrolled');
+    }
+  });
+
   //ローディングアニメーションとスライダー1個目
   $(window).on("load", function () {
     const fadeOutText = () => new Promise((resolve) => {
-        $(".loading__title, .loading__sub-title").fadeOut(1000, resolve);
+      $(".loading__title, .loading__sub-title").fadeOut(1000, resolve);
     });
 
     const fadeOutLoad = () => new Promise((resolve) => {
-        $(".js-load").fadeOut(1000, resolve);
+      $(".js-load").fadeOut(1000, resolve);
     });
 
     const showLoader = () => new Promise((resolve) => {
-        const loader = document.querySelector('.js-loader');
-        loader.style.display = 'flex';
-        resolve();
+      const loader = document.querySelector('.js-loader');
+      loader.style.display = 'flex';
+      resolve();
     });
 
     const startAnimations = () => new Promise((resolve) => {
-        const turtleImages = document.querySelectorAll('.loading__turtle-image');
-        turtleImages.forEach((image) => {
-            image.style.animationPlayState = 'running';
-        });
-        setTimeout(resolve, 1500); // アニメーションの完了を待つ
+      const turtleImages = document.querySelectorAll('.loading__turtle-image');
+      turtleImages.forEach((image) => {
+        image.style.animationPlayState = 'running';
+      });
+      setTimeout(resolve, 1500); // アニメーションの完了を待つ
     });
 
     const showFullImage = () => new Promise((resolve) => {
-        const content = document.querySelector('.js-content');
-        content.style.display = 'block';
-        setTimeout(() => {
-            resolve();
-        }, 1500); // 全体画像表示後の遅延
+      const content = document.querySelector('.js-content');
+      content.style.display = 'block';
+      setTimeout(() => {
+        resolve();
+      }, 1500); // 全体画像表示後の遅延
     });
 
     const showOverlayText = () => new Promise((resolve) => {
-        const overlayText = document.querySelector('.js-overlay-text');
-        overlayText.style.opacity = '1';
-        setTimeout(resolve, 500); // Overlay text display delay (遅延を短く調整)
+      const overlayText = document.querySelector('.js-overlay-text');
+      overlayText.style.opacity = '1';
+      setTimeout(resolve, 500); // Overlay text display delay (遅延を短く調整)
     });
 
     const hideLoaderShowContent = () => new Promise((resolve) => {
-        const loader = document.querySelector('.js-loader');
-        const content = document.querySelector('.js-content');
-        const turtleImage = document.querySelector('.loading__turtle-full-image');
-        const whiteBg = document.querySelector('.js-white-bg');
+      const loader = document.querySelector('.js-loader');
+      const content = document.querySelector('.js-content');
+      const turtleImage = document.querySelector('.loading__turtle-full-image');
+      const whiteBg = document.querySelector('.js-white-bg');
 
-        loader.style.opacity = '0';
+      loader.style.opacity = '0';
+      setTimeout(() => {
+        loader.style.display = 'none'; // ローダーを非表示にする
         setTimeout(() => {
-            loader.style.display = 'none'; // ローダーを非表示にする
+          turtleImage.classList.add('fade-out');
+          setTimeout(() => {
+            whiteBg.style.opacity = '0'; // 白い背景をフェードアウト
+            turtleImage.style.opacity = '0'; // turtleImageをフェードアウト
+            content.style.opacity = '0'; // contentをフェードアウト
             setTimeout(() => {
-                turtleImage.classList.add('fade-out');
-                setTimeout(() => {
-                    whiteBg.style.opacity = '0'; // 白い背景をフェードアウト
-                    turtleImage.style.opacity = '0'; // turtleImageをフェードアウト
-                    content.style.opacity = '0'; // contentをフェードアウト
-                    setTimeout(() => {
-                        if (whiteBg.parentNode) {
-                            whiteBg.parentNode.removeChild(whiteBg); // 白い背景をDOMから削除
-                        }
-                        if (turtleImage.parentNode) {
-                            turtleImage.parentNode.removeChild(turtleImage); // turtleImageをDOMから削除
-                        }
-                        if (content.parentNode) {
-                            content.parentNode.removeChild(content); // contentをDOMから削除
-                        }
-                        const loading = document.querySelector('.loading');
-                        if (loading && loading.parentNode) {
-                            loading.parentNode.removeChild(loading); // 全体のローディングをDOMから削除
-                        }
-                        resolve();
-                    }, 500); // 白い背景とturtleImageとcontentのフェードアウトを待つ
-                }, 1000); // Wait for the fade-out to complete
-            }, 500); // Delay before fading out the turtle image
-        }, 500); // Adjust the fade-out duration if needed
+              if (whiteBg.parentNode) {
+                whiteBg.parentNode.removeChild(whiteBg); // 白い背景をDOMから削除
+              }
+              if (turtleImage.parentNode) {
+                turtleImage.parentNode.removeChild(turtleImage); // turtleImageをDOMから削除
+              }
+              if (content.parentNode) {
+                content.parentNode.removeChild(content); // contentをDOMから削除
+              }
+              const loading = document.querySelector('.loading');
+              if (loading && loading.parentNode) {
+                loading.parentNode.removeChild(loading); // 全体のローディングをDOMから削除
+              }
+              resolve();
+            }, 500); // 白い背景とturtleImageとcontentのフェードアウトを待つ
+          }, 1000); // Wait for the fade-out to complete
+        }, 500); // Delay before fading out the turtle image
+      }, 500); // Adjust the fade-out duration if needed
     });
 
     fadeOutText()
-        .then(fadeOutLoad)
-        .then(showLoader)
-        .then(startAnimations)
-        .then(showFullImage)
-        .then(showOverlayText)
-        .then(hideLoaderShowContent)
-        .then(() => {
-            // スライダーの初期化
-            const swiper01 = new Swiper(".fv-swiper .swiper", {
-                loop: true,
-                effect: "fade",
-                speed: 3000,
-                allowTouchMove: false,
-                autoplay: {
-                    delay: 3000,
-                },
-                on: {
-                    resize: function () {
-                        swiper01.autoplay.start();
-                    }
-                }
-            });
-
-            // クラス js-content の display を block に設定
-            const contentElement = document.querySelector('.js-content');
-            if (contentElement) {
-                contentElement.style.display = 'block';
-                contentElement.style.opacity = '1'; // contentを表示
+      .then(fadeOutLoad)
+      .then(showLoader)
+      .then(startAnimations)
+      .then(showFullImage)
+      .then(showOverlayText)
+      .then(hideLoaderShowContent)
+      .then(() => {
+        // スライダーの初期化
+        const swiper01 = new Swiper(".fv-swiper .swiper", {
+          loop: true,
+          effect: "fade",
+          speed: 3000,
+          allowTouchMove: false,
+          autoplay: {
+            delay: 3000,
+          },
+          on: {
+            resize: function () {
+              swiper01.autoplay.start();
             }
-
-            // クラス fv の display を block に設定
-            const fvElement = document.querySelector('.fv');
-            if (fvElement) {
-                fvElement.style.display = 'block';
-            }
-        })
-        .catch((error) => {
-            console.error('An error occurred:', error);
+          }
         });
-});
+
+        // クラス js-content の display を block に設定
+        const contentElement = document.querySelector('.js-content');
+        if (contentElement) {
+          contentElement.style.display = 'block';
+          contentElement.style.opacity = '1'; // contentを表示
+        }
+
+        // クラス fv の display を block に設定
+        const fvElement = document.querySelector('.fv');
+        if (fvElement) {
+          fvElement.style.display = 'block';
+        }
+      })
+      .catch((error) => {
+        console.error('An error occurred:', error);
+      });
+  });
 
   //スライダー2個目
   const swiper02 = new Swiper(".cp-swiper .swiper", {
