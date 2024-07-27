@@ -6,7 +6,6 @@
   flex-shrink: 0;
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   background-color: $white;
-  height: 100%;
 
   @include mq("md") {
     width: rem(333);
@@ -77,6 +76,7 @@
 .card1__text {
   color: $green2;
   margin-top: rem(8);
+  margin-bottom: rem(8);
   text-align: center;
   font-size: rem(14);
   font-weight: $normal;
@@ -90,7 +90,7 @@
 }
 
 .card1__flex {
-  margin-top: rem(8);
+  margin-top:auto;
   width: rem(210);
   margin-left: auto;
   margin-right: auto;
