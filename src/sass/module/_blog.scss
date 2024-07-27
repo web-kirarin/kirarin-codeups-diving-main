@@ -11,18 +11,17 @@
 
 .blog__cards {
   margin-top: rem(32);
-  display: flex;
-  align-items: center;
-  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   gap: rem(39);
-  flex-wrap: wrap;
 
   @include mq("md") {
     margin-top: rem(83);
-    flex-direction: row;
-    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
     gap: rem(40);
-
+    max-width: rem(1080);
   }
 }
 
