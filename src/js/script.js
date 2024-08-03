@@ -1,8 +1,14 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
-  $(".js-hamburger,.js-sp-nav").click(function () {
+  $(".js-hamburger, .js-sp-nav").click(function () {
+    console.log("Hamburger menu clicked");
     $(".js-hamburger").toggleClass("is-active");
-    $(".js-sp-nav").toggleClass("is-active");
+    $(".js-sp-nav").toggleClass("fade");
+  });
+
+  $(window).on("load", function () {
+    console.log("Window loaded");
+    $(".js-sp-nav").css("display", "block");
   });
   // ページ読み込み完了後に実行されるコード
   document.addEventListener("scroll", function () {
