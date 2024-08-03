@@ -1,11 +1,37 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
+  const toggleDrawerMenu = () => {
+    console.log("Hamburger menu toggled");
+    $(".js-hamburger").toggleClass("is-active");
+    $(".js-sp-nav").toggleClass("fade");
+  };
+
   const initDrawerMenu = () => {
-    $(".js-hamburger").click(function () {
-      console.log("Hamburger menu clicked");
-      $(".js-hamburger").toggleClass("is-active");
-      $(".js-sp-nav").toggleClass("fade");
+    $(".js-hamburger").off("click").on("click", toggleDrawerMenu);
+
+    // ドロワーメニュー内をクリックしたときにもメニューを閉じる
+    $(".js-sp-nav").off("click").on("click", function () {
+      console.log("Menu item clicked");
+      $(".js-hamburger").removeClass("is-active");
+      $(".js-sp-nav").removeClass("fade");
     });
+  };
+
+  const resetDrawerMenu = () => {
+    $(".js-hamburger").removeClass("is-active");
+    $(".js-sp-nav").removeClass("fade").css("display", ""); // displayプロパティをリセット
+  };
+
+  const handleResize = () => {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      resetDrawerMenu();
+    } else {
+      if ($(".js-hamburger").hasClass("is-active")) {
+        $(".js-sp-nav").addClass("fade");
+      } else {
+        $(".js-sp-nav").removeClass("fade");
+      }
+    }
   };
 
   // ローディングアニメーションの処理
@@ -122,16 +148,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         // ドロワーメニューのスクリプトを初期化
         initDrawerMenu();
 
-        // ロード後にdisplayをnoneにしない
-        $(".js-sp-nav").css("display", "block");
+        // ウィンドウリサイズイベントを設定
+        $(window).resize(handleResize);
+
+        // 初期表示時のドロワーメニューの状態を設定
+        handleResize();
       })
       .catch((error) => {
         console.error('An error occurred:', error);
       });
   });
 
-
-  //スライダー2個目
+  // スライダー2個目
   const swiper02 = new Swiper(".cp-swiper .swiper", {
     loop: true,
     speed: 1500,
@@ -161,11 +189,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     },
   });
 
-  //要素の取得とスピードの設定
+  // 要素の取得とスピードの設定
   var box = $('.js-image'),
     speed = 700;
 
-  //.js-imageの付いた全ての要素に対して下記の処理を行う
+  // .js-imageの付いた全ての要素に対して下記の処理を行う
   box.each(function () {
     $(this).append('<div class="color"></div>')
     var color = $(this).find($('.color')),
@@ -174,7 +202,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
     image.css('opacity', '0');
     color.css('width', '0%');
-    //inviewを使って背景色が画面に現れたら処理をする
+    // inviewを使って背景色が画面に現れたら処理をする
     color.on('inview', function () {
       if (counter == 0) {
         $(this).delay(200).animate({ 'width': '100%' }, speed, function () {
@@ -186,41 +214,42 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       }
     });
   });
-});
 
-// ページ読み込み完了後に実行されるコード
-document.addEventListener("scroll", function () {
-  // トップページのヘッダー用
-  var header = document.querySelector('.header');
-  if (window.scrollY > window.innerHeight) {//メインビューの高さを超えたら
-    header.classList.add('scrolled');
-  } else if (header) {
-    header.classList.remove('scrolled');
+  // ページ読み込み完了後に実行されるコード
+  document.addEventListener("scroll", function () {
+    // トップページのヘッダー用
+    var header = document.querySelector('.header');
+    if (window.scrollY > window.innerHeight) {//メインビューの高さを超えたら
+      header.classList.add('scrolled');
+    } else if (header) {
+      header.classList.remove('scrolled');
+    }
+
+    // 下層ページのヘッダー用
+    var subHeader = document.querySelector('.sub-header');
+    if (subHeader && window.scrollY > 550) {
+      subHeader.classList.add('scrolled');
+    } else if (subHeader) {
+      subHeader.classList.remove('scrolled');
+    }
+  });
+
+  // resizeイベント
+  $(window).resize(function () {
+    if (window.matchMedia("(min-width: 769px)").matches) {
+      resetDrawerMenu();
+    }
+  });
+
+  function openDrawer() {
+    $(".js-sp-nav").fadeIn();
+    $(".js-hamburger").addClass("is-open");
   }
 
-  // 下層ページのヘッダー用
-  var subHeader = document.querySelector('.sub-header');
-  if (subHeader && window.scrollY > 550) {
-    subHeader.classList.add('scrolled');
-  } else if (subHeader) {
-    subHeader.classList.remove('scrolled');
+  function closeDrawer() {
+    $(".js-sp-nav").fadeOut();
+    $(".js-hamburger").removeClass("is-open");
   }
 });
 
-//resizeイベント
-$(window).resize(function () {
-  if (window.matchMedia("(min-width: 769px)").matches) {
-    closeDrawer();
-  }
-});
-
-function openDrawer() {
-  $(".js-sp-nav").fadeIn();
-  $(".js-hamburger").addClass("is-open");
-}
-
-function closeDrawer() {
-  $(".js-sp-nav").fadeOut();
-  $(".js-hamburger").removeClass("is-open");
-}
 
