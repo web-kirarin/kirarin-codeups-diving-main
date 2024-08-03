@@ -1,18 +1,14 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
-  $(".js-hamburger, .js-sp-nav").click(function () {
-    console.log("Hamburger menu clicked");
-    $(".js-hamburger").toggleClass("is-active");
-    $(".js-sp-nav").toggleClass("fade");
-  });
+  const initDrawerMenu = () => {
+    $(".js-hamburger").click(function () {
+      console.log("Hamburger menu clicked");
+      $(".js-hamburger").toggleClass("is-active");
+      $(".js-sp-nav").toggleClass("fade");
+    });
+  };
 
-  $(window).on("load", function () {
-    console.log("Window loaded");
-    $(".js-sp-nav").css("display", "block");
-  });
- 
-
-  //ローディングアニメーションとスライダー1個目
+  // ローディングアニメーションの処理
   $(window).on("load", function () {
     const fadeOutText = () => new Promise((resolve) => {
       $(".loading__title, .loading__sub-title").fadeOut(1000, resolve);
@@ -122,11 +118,18 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         if (fvElement) {
           fvElement.style.display = 'block';
         }
+
+        // ドロワーメニューのスクリプトを初期化
+        initDrawerMenu();
+
+        // ロード後にdisplayをnoneにしない
+        $(".js-sp-nav").css("display", "block");
       })
       .catch((error) => {
         console.error('An error occurred:', error);
       });
   });
+
 
   //スライダー2個目
   const swiper02 = new Swiper(".cp-swiper .swiper", {
@@ -185,8 +188,8 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   });
 });
 
- // ページ読み込み完了後に実行されるコード
- document.addEventListener("scroll", function () {
+// ページ読み込み完了後に実行されるコード
+document.addEventListener("scroll", function () {
   // トップページのヘッダー用
   var header = document.querySelector('.header');
   if (window.scrollY > window.innerHeight) {//メインビューの高さを超えたら
