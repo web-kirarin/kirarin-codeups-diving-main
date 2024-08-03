@@ -10,24 +10,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     console.log("Window loaded");
     $(".js-sp-nav").css("display", "block");
   });
-  // ページ読み込み完了後に実行されるコード
-  document.addEventListener("scroll", function () {
-    // トップページのヘッダー用
-    var header = document.querySelector('.header');
-    if (window.scrollY > window.innerHeight) {//メインビューの高さを超えたら
-      header.classList.add('scrolled');
-    } else if (header) {
-      header.classList.remove('scrolled');
-    }
-
-    // 下層ページのヘッダー用
-    var subHeader = document.querySelector('.sub-header');
-    if (subHeader && window.scrollY > 550) {
-      subHeader.classList.add('scrolled');
-    } else if (subHeader) {
-      subHeader.classList.remove('scrolled');
-    }
-  });
+ 
 
   //ローディングアニメーションとスライダー1個目
   $(window).on("load", function () {
@@ -200,6 +183,25 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       }
     });
   });
+});
+
+ // ページ読み込み完了後に実行されるコード
+ document.addEventListener("scroll", function () {
+  // トップページのヘッダー用
+  var header = document.querySelector('.header');
+  if (window.scrollY > window.innerHeight) {//メインビューの高さを超えたら
+    header.classList.add('scrolled');
+  } else if (header) {
+    header.classList.remove('scrolled');
+  }
+
+  // 下層ページのヘッダー用
+  var subHeader = document.querySelector('.sub-header');
+  if (subHeader && window.scrollY > 550) {
+    subHeader.classList.add('scrolled');
+  } else if (subHeader) {
+    subHeader.classList.remove('scrolled');
+  }
 });
 
 //resizeイベント
