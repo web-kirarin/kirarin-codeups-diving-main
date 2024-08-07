@@ -35,15 +35,15 @@
   font-family: $english-family;
   color: $white;
   text-align: center;
-  top: 41.5%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 41.5%);
+  transform: translate(-50%, -50%);
 
   @include mq("md") {
     width: rem(496);
-    top: 37%;
+    top: 50%;
     left: 50%;
-    transform: translate(-50%, 37%);
+    transform: translate(-50%, -50%);
   }
 }
 
