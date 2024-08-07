@@ -19,6 +19,12 @@
 
   @include mq("md") {
     margin-top: rem(83);
+    grid-template-columns: repeat(2, 1fr);
+    gap: rem(40);
+  }
+
+  @include mq("xl") {
+    margin-top: rem(83);
     grid-template-columns: repeat(3, 1fr);
     gap: rem(40);
     max-width: rem(1080);
