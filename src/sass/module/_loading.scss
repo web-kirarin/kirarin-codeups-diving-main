@@ -168,7 +168,7 @@
   background-position: top;
   animation: slide-up-top 1.5s forwards;
 
-  @include mq("sp") {
+  @include mq("sm") {
     top: 50%;
     background-position: top;
   }
@@ -181,7 +181,7 @@
   background-repeat: no-repeat;
   animation: slide-up-bottom 1.5s forwards;
 
-  @include mq("sp") {
+  @include mq("sm") {
     bottom: -100%;
     background-position: bottom;
   }
