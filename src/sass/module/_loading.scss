@@ -62,8 +62,10 @@
   width: 100%;
   height: 100vh;
   background-color: white;
-  z-index: 1200; /* 必要に応じて調整 */
-  transition: opacity 0.5s ease; /* フェードアウト用 */
+  z-index: 1200;
+  /* 必要に応じて調整 */
+  transition: opacity 0.5s ease;
+  /* フェードアウト用 */
 }
 
 .loading__loader {
@@ -108,6 +110,7 @@
   height: 50%;
   background-image: url('../images/common/loading-sp-img.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
   animation-play-state: paused;
   transition: bottom 1.5s ease;
 
@@ -136,6 +139,16 @@
     animation: slide-up-right 1.5s forwards;
     animation-delay: 0.8s;
   }
+
+  @include mq("lg") {
+    right: 0;
+    background-position: right;
+  }
+
+  @include mq("xl") {
+    right: 0;
+    background-position: right;
+  }
 }
 
 @keyframes slide-up-left {
@@ -154,6 +167,12 @@
   top: 50%;
   background-position: top;
   animation: slide-up-top 1.5s forwards;
+
+  @include mq("sp") {
+    top: 50%;
+    background-position: top;
+  }
+
 }
 
 .loading__turtle-image-bottom {
@@ -161,6 +180,12 @@
   background-position: bottom;
   background-repeat: no-repeat;
   animation: slide-up-bottom 1.5s forwards;
+
+  @include mq("sp") {
+    bottom: -100%;
+    background-position: bottom;
+  }
+
 }
 
 @keyframes slide-up-top {
@@ -177,6 +202,7 @@
   from {
     bottom: -100%;
   }
+
   to {
     bottom: 0;
   }
