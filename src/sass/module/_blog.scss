@@ -9,6 +9,13 @@
   }
 }
 
+.blog__title {
+
+  @include mq("md") {
+    color: $white;
+  }
+}
+
 .blog__cards {
   margin-top: rem(32);
   margin-left: auto;
