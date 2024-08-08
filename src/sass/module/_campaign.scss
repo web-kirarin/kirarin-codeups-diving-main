@@ -11,12 +11,12 @@
 
 .campaign__slider {
   margin-top: rem(32);
-  height: rem(370);
+  // height: rem(370);
   margin-right: calc(50% - 50vw);
 
   @include mq("md") {
     margin-top: rem(42);
-    height: rem(450);
+    // height: rem(450);
     margin-left: calc(50% - 37.5vw);
   }
 }
