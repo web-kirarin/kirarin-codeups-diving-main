@@ -9,7 +9,21 @@
   }
 }
 
-.blog__title {
+.blog__title > h2 {
+
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.blog__title > p {
+
+  @include mq("md") {
+    color: $white;
+  }
+}
+
+.blog__title > h2 >span {
 
   @include mq("md") {
     color: $white;
