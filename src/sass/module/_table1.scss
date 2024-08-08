@@ -27,11 +27,11 @@
   padding-top: rem(8);
 }
 
-.table1__line:not(:first-of-type) > td {
+.table1__line:not(:first-of-type)>td {
   padding-top: rem(6);
 }
 
-.table1__line > td {
+.table1__line>td {
   font-family: $base-font-family;
   font-size: rem(14);
   font-style: normal;
@@ -45,7 +45,11 @@
   }
 }
 
-.table1__line > td:not(:first-of-type) {
+.table1__line>td:not(:first-of-type) {
   text-align: right;
-}
+  padding-left: rem(10);
 
+  @include mq("md") {
+    padding-left: rem(20);
+  }
+}
