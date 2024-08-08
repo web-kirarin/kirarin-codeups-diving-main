@@ -12,6 +12,14 @@
   overflow: hidden;
 }
 
+.swiper .swiper-slide {
+  height: auto;
+}
+
+.swiper-slide .card1 {
+  height: 100%;
+}
+
 .campaign__card.swiper-slide img {
   width: 100%;
   object-fit: cover;

@@ -165,6 +165,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     speed: 1500,
     slidesPerView: 1.3,
     spaceBetween: 24,
+    autoHeight: true,
     autoplay: {
       delay: 1500,
       disableOnInteraction: false,
