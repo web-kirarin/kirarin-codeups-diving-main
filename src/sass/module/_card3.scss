@@ -18,7 +18,6 @@
 
 .card3__img {
   max-width: rem(151);
-  flex-shrink: 0;
 
   @include mq("md") {
     max-width: rem(180);
