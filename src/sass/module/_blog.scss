@@ -23,7 +23,7 @@
   }
 }
 
-.blog__title > h2 >span {
+.blog__title > p >span {
 
   @include mq("md") {
     color: $white;
