@@ -60,6 +60,7 @@ div.information__image img {
 
 
 .information__textbox {
+  flex-shrink: 0;
 
   @include mq("md") {
     max-width: rem(492);
