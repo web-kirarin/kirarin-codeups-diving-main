@@ -170,11 +170,27 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       disableOnInteraction: false,
     },
     breakpoints: {
+      400: {
+        slidesPerView: 1.5,
+        spaceBetween: 24,
+      },
+      500: {
+        slidesPerView: 1.8,
+        spaceBetween: 24,
+      },
       600: {
         slidesPerView: 2,
         spaceBetween: 30,
       },
-      769: {
+      767: {
+        slidesPerView: 2.5,
+        spaceBetween: 30,
+      },
+      900: {
+        slidesPerView: 2.8,
+        spaceBetween: 30,
+      },
+      1023: {
         slidesPerView: 3,
         spaceBetween: 40,
       },
