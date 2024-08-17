@@ -12,8 +12,9 @@
   overflow: hidden;
 }
 
-.swiper .swiper-slide {
-  height: auto;
+.campaign__slider.swiper {
+  overflow: visible;
+  overflow-x: clip;
 }
 
 .swiper-slide .card1 {
