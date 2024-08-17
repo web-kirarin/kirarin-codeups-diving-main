@@ -4,11 +4,11 @@
   display: block;
   margin-left: auto;
   margin-right: auto;
-  max-width: rem(333);
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   background-color: $white;
   height: 100%;
   transition: 0.3s opacity;
+  padding: rem(16) rem(16) rem(24) rem(16);
 }
 
 .card2:hover {
@@ -17,7 +17,12 @@
 
 .card2__img {
   max-width: rem(301);
-  margin: rem(16) rem(16);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq("md") {
+    width: 100%;
+  }
 }
 
 .card2__img img {
@@ -26,11 +31,9 @@
   object-fit: cover;
 }
 
-.card2__body {
-  padding: rem(2) rem(16) rem(24) rem(16);
-}
-
 .card2__time {
+  display: block;
+  margin-top: rem(25);
   font-family: $english-family;
   font-size: rem(12);
   font-weight: $normal;
@@ -52,10 +55,6 @@
   border: 0;
   width: 100%;
   border-top: 1px solid $green;
-
-  @include mq("md") {
-    width: rem(301);
-  }
 }
 
 .card2__text {
