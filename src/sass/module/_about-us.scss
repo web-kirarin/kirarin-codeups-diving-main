@@ -1,7 +1,7 @@
 @use "global" as *;
 
 .about-us {
-  margin-top: rem(45);
+  margin-top: rem(86);
 
   @include mq("md") {
     margin-top: rem(70);
@@ -9,7 +9,7 @@
 }
 
 .about-us__content {
-  margin-top: rem(30);
+  margin-top: rem(31);
   margin-left: auto;
   margin-right: auto;
 
