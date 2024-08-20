@@ -139,16 +139,6 @@
     animation: slide-up-right 1.5s forwards;
     animation-delay: 0.8s;
   }
-
-  @include mq("lg") {
-    right: 0;
-    background-position: right;
-  }
-
-  @include mq("xl") {
-    right: 0;
-    background-position: right;
-  }
 }
 
 @keyframes slide-up-left {
@@ -167,12 +157,6 @@
   top: 50%;
   background-position: top;
   animation: slide-up-top 1.5s forwards;
-
-  @include mq("sm") {
-    top: 50%;
-    background-position: top;
-  }
-
 }
 
 .loading__turtle-image-bottom {
@@ -180,12 +164,6 @@
   background-position: bottom;
   background-repeat: no-repeat;
   animation: slide-up-bottom 1.5s forwards;
-
-  @include mq("sm") {
-    bottom: -100%;
-    background-position: bottom;
-  }
-
 }
 
 @keyframes slide-up-top {
