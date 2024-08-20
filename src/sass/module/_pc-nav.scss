@@ -8,6 +8,7 @@
   @include mq("md") {
     height: inherit;
     display: flex;
+    gap: rem(40);
     align-items: center;
   }
 }
@@ -27,7 +28,6 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  padding: 0 rem(20);
 }
 
 .pc-nav__item a::after {
