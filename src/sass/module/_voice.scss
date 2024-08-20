@@ -2,10 +2,10 @@
 
 .voice {
   position: relative;
-  padding: rem(82) 0 rem(83);
+  margin-top: rem(82);
 
   @include mq("md") {
-    padding: rem(145) 0 rem(144);
+  margin-top: rem(145);
   }
 }
 

@@ -2,10 +2,12 @@
 
 .price {
   position: relative;
+  margin-top: rem(83);
   padding: rem(80) 0 rem(81);
   background-color: $green3;
 
   @include mq("md") {
+    margin-top: rem(144);
     padding: rem(101) 0 rem(105);
   }
 }
