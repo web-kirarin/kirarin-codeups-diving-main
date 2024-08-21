@@ -1,6 +1,7 @@
 @use "global" as *;
 
 .about-us {
+  position: relative;
   margin-top: rem(86);
 
   @include mq("md") {
@@ -131,7 +132,7 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
-  top: 86.5%;
-  left: 91%;
+  top: 88%;
+  right: calc(50% - min(48%, 40rem))
 }
 }
