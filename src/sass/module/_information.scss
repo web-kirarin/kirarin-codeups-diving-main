@@ -1,8 +1,8 @@
 @use "global" as *;
 
 .information {
-  margin-top: rem(73);
-  padding: rem(80) 0 rem(84);
+  margin-top: rem(70);
+  padding: rem(80) 0 rem(81);
   background-color: $green3;
 
   @include mq("md") {
