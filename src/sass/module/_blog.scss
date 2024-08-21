@@ -40,12 +40,6 @@
 
   @include mq("md") {
     margin-top: rem(83);
-    grid-template-columns: repeat(2, 1fr);
-    gap: rem(40);
-  }
-
-  @include mq("xl") {
-    margin-top: rem(83);
     grid-template-columns: repeat(3, 1fr);
     gap: rem(40);
   }
@@ -80,8 +74,8 @@
   position: absolute;
 
   @include mq("md") {
-    top: rem(24);
-    left: rem(100);
+    top: 3.1%;
+    left:  calc(50% - min(43%, 40rem));
     display: block;
     width: rem(437);
     height: rem(201);
