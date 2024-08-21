@@ -1,14 +1,13 @@
 @use "global" as *;
 
 .card1 {
-  display: block;
   width: rem(280);
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   background-color: $white;
 
   @include mq("md") {
     width: rem(333);
-  }
+}
 }
 
 .card1__img {
