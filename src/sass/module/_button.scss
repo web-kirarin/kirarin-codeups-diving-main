@@ -11,9 +11,8 @@
   margin-right: auto;
   place-items: center;
   cursor: pointer;
-  display: block;
+  display: inline-block;
   width: rem(202);
-  height: rem(54);
   padding: rem(16) rem(88) rem(16) rem(40);
   position: relative;
   background-color: $green;
