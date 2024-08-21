@@ -1,12 +1,11 @@
 @use "global" as *;
 
-.button {
+.button__wrapper {
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
-.button a {
+.button {
   color: $white;
   margin-left: auto;
   margin-right: auto;
@@ -27,7 +26,7 @@
 }
 
 
-.button .button__mask {
+.button__wrapper .button__mask {
   position: absolute;
   top: rem(4);
   left: rem(4);
@@ -39,7 +38,7 @@
   z-index: -20;
 }
 
-.button .button__content::after {
+.button__wrapper .button__content::after {
   position: absolute;
   content: '';
   background-image: url(../images/common/button-arrow.svg);
@@ -53,7 +52,7 @@
   z-index: 1;
 }
 
-.button a:hover span::after {
+.button:hover span::after {
   position: absolute;
   content: '';
   background-image: url(../images/common/button-arrow-hover.svg);
@@ -67,13 +66,13 @@
 
 
 
-.button a:hover {
+.button:hover {
   color: $green;
 }
 
 
 
-.button a::before {
+.button::before {
   content: '';
   display: block;
   width: 100%;
@@ -89,6 +88,6 @@
 }
 
 
-.button a:hover::before {
+.button:hover::before {
   transform: scale(1,1);
 }

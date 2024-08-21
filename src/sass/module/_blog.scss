@@ -51,7 +51,7 @@
   }
 }
 
-.blog__button {
+.blog__button-wrapper {
   margin-top: rem(40);
 
   @include mq("md") {

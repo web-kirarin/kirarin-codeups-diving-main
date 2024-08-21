@@ -84,7 +84,7 @@ div.price__pc-img img {
   width: 100%;
 }
 
-.price__button {
+.price__button-wrapper {
   margin-top: rem(37);
 
   @include mq("md") {

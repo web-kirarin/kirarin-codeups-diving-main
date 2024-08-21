@@ -25,7 +25,7 @@
   }
 }
 
-.voice__button {
+.voice__button-wrapper {
   margin-top: rem(41);
 
   @include mq("md") {
