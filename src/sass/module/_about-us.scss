@@ -126,8 +126,8 @@
 .about-us__icon {
   @include mq("md") {
   position: absolute;
-  width: rem(194);
-  height: rem(181);
+  width: 13.5%;
+  height: 23.5%;
   background-image: url(../images/common/about-us-icon.png);
   background-repeat: no-repeat;
   background-position: center center;
