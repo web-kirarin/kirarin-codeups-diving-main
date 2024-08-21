@@ -37,8 +37,8 @@
   position: absolute;
 
   @include mq("md") {
-    top: rem(23);
-    left: rem(100);
+    top: -20%;
+    left:  calc(50% - min(43%, 40rem));
     display: block;
     width: rem(301);
     height: rem(138);
@@ -53,8 +53,8 @@
   position: absolute;
 
   @include mq("md") {
-    bottom: rem(70);
-    right: rem(180);
+    bottom: -11%;
+    right: calc(50% - min(43%, 33.7rem));
     display: block;
     width: rem(71);
     height: rem(162);
