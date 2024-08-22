@@ -37,11 +37,11 @@
   position: absolute;
 
   @include mq("md") {
-    top: -20%;
+    top: -19.6%;
     left:  calc(50% - min(43%, 40rem));
     display: block;
-    width: rem(301);
-    height: rem(138);
+    width: 20.9%;
+    height: 22%;
     background-image: url(../images/common/voice-fish-img.png);
     background-repeat: no-repeat;
     background-position: center center;
@@ -56,9 +56,8 @@
     bottom: -11%;
     right: calc(50% - min(43%, 33.7rem));
     display: block;
-    width: rem(71);
-    height: rem(162);
-    flex-shrink: 0;
+    width: 5%;
+    height: 26%;
     background-image: url(../images/common/voice-seahorse-img.png);
     background-repeat: no-repeat;
     background-position: center center;
