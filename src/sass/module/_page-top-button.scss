@@ -9,11 +9,14 @@ main {
   z-index: 10;
   height: rem(51);
   width: rem(51);
-  top: 80%;
+  top: 85%;
   right: calc(50% - min(50.5%, 50rem));
 
   @include mq("md") {
-    right: calc(50% - min(40%, 40rem));
+    top: 86.5%;
+    right: calc(50% - min(48%, 50rem));
+    height: rem(86);
+    width: rem(86);
   }
 }
 
@@ -21,12 +24,8 @@ main {
   display: block;
   height: rem(51);
   width: rem(51);
-  bottom: rem(12);
-  right: rem(13);
 
   @include mq("md") {
-    bottom: rem(14);
-    right: rem(17);
     height: rem(86);
     width: rem(86);
   }
@@ -35,4 +34,3 @@ main {
 .page-top-button img {
   width: 100%;
 }
-
