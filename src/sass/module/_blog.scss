@@ -74,11 +74,11 @@
   position: absolute;
 
   @include mq("md") {
-    top: 3.1%;
+    top: 2%;
     left:  calc(50% - min(43%, 40rem));
     display: block;
-    width: rem(437);
-    height: rem(201);
+    width: 30.3%;
+    height: 26.2%;
     background-image: url(../images/common/blog-fish-img.png);
     background-repeat: no-repeat;
     background-position: center center;
