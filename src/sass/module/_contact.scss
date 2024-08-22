@@ -143,26 +143,4 @@
   }
 }
 
-.contact__button-wrapper {
-  margin-top: rem(41);
-}
 
-.contact__page-top-button {
-  position: absolute;
-  display: block;
-  height: rem(51);
-  width: rem(51);
-  bottom: rem(12);
-  right: rem(13);
-
-  @include mq("md") {
-    bottom: rem(14);
-    right: rem(17);
-    height: rem(86);
-    width: rem(86);
-  }
-}
-
-.contact__page-top-button img {
-  width: 100%;
-}
