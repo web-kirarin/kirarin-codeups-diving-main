@@ -13,22 +13,22 @@
 
 .contact__fish {
   position: absolute;
-  top: rem(54);
-  right: rem(15);
+  top: -4.2%;
+  right: calc(50% - min(50%, 50rem));
   display: block;
-  width: rem(109);
-  height: rem(50);
+  width: 37.5%;
+  height: 8%;
   background-image: url(../images/common/contact-fish-img.png);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: contain;
 
   @include mq("md") {
-    top: rem(100);
-    right: rem(47);
+    top: -10%;
+    right: calc(50% - min(51%, 49rem));
     display: block;
-    width: rem(313);
-    height: rem(145);
+    width: 30%;
+    height: 35%;
     background-image: url(../images/common/contact-fish-img.png);
     background-repeat: no-repeat;
     background-position: center center;
