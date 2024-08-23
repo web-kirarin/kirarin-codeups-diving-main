@@ -9,7 +9,7 @@
   visibility: hidden;
   opacity: 0;
   background-color: $green;
-  z-index: 8000;
+  z-index: 500;
   padding: rem(21) 0 rem(111);
   overflow-y: scroll;
   transition: 0.6s visibility, 0.6s opacity ease-in-out;
@@ -26,6 +26,7 @@
 }
 
 .sp-nav__items {
+  z-index: 1;
   margin-top: rem(71);
   display: flex;
   flex-direction: column;
@@ -35,7 +36,6 @@
   flex-wrap: wrap;
   flex-shrink: 0;
   align-items: flex-start;
-  z-index: 8000;
 }
 
 

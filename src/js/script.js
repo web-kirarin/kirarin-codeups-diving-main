@@ -5,9 +5,22 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".js-hamburger").toggleClass("is-active");
     $(".js-sp-nav").toggleClass("fade");
     $(".js-header").toggleClass("is-active");
+    $(".js-header").removeClass("scrolled");
+
+    if ($(".js-header").hasClass("is-active")) {
+      console.log("Header is now active");
+    } else {
+      console.log("Header is now inactive");
+    }
   };
 
   const initDrawerMenu = () => {
+    const header = document.querySelector(".js-header");
+
+    if (header) {
+      console.log(header); // ヘッダー要素が取得できているか確認
+    }
+
     $(".js-hamburger").off("click").on("click", toggleDrawerMenu);
 
     // ドロワーメニュー内をクリックしたときにもメニューを閉じる
@@ -15,8 +28,23 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       console.log("Menu item clicked");
       $(".js-hamburger").removeClass("is-active");
       $(".js-sp-nav").removeClass("fade");
+      $(".js-header").removeClass("is-active"); // メニューを閉じるときにヘッダーのクラスもリセット
     });
   };
+
+  // ローディングアニメーションが完了した後にドロワーメニューを初期化
+  $(window).on("load", function () {
+    // ローディングアニメーション関連の処理...
+
+    // アニメーションが完了したらドロワーメニューの初期化を行う
+    initDrawerMenu();
+
+    // ウィンドウリサイズイベントを設定
+    $(window).resize(handleResize);
+
+    // 初期表示時のドロワーメニューの状態を設定
+    handleResize();
+  });
 
   const resetDrawerMenu = () => {
     $(".js-hamburger").removeClass("is-active");
@@ -269,5 +297,4 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     $(".js-hamburger").removeClass("is-open");
   }
 });
-
 
