@@ -4,6 +4,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     console.log("Hamburger menu toggled");
     $(".js-hamburger").toggleClass("is-active");
     $(".js-sp-nav").toggleClass("fade");
+    $(".js-header").toggleClass("is-active");
   };
 
   const initDrawerMenu = () => {
