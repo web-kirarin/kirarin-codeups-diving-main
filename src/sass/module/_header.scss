@@ -8,7 +8,7 @@
   left: 0;
   z-index: 1000;
   background-color: rgba($green2, 0.68);
-  transition: 0.3s background-color, 0.3s z-index;
+  transition: 0.3s background-color, 0.3s;
 
   @include mq("md") {
     height: rem(90);
@@ -16,8 +16,8 @@
 }
 
 .header.is-active {
-  background-color: $green;
-  z-index: 9990;
+  background-color: rgba($green, 1);
+  z-index: 10000;
 }
 
 .header.scrolled {
