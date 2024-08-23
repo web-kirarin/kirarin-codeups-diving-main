@@ -17,7 +17,7 @@
 
 .header.is-active {
   background-color: $green;
-  z-index: 9991;
+  z-index: 9998 !important;
 }
 
 .header.scrolled {
