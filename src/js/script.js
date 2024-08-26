@@ -151,6 +151,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
           effect: "fade",
           speed: 3000,
           allowTouchMove: false,
+          autoHeight:true,
           autoplay: {
             delay: 3000,
           },

@@ -4,9 +4,11 @@
   width: rem(280);
   box-shadow: rem(2) rem(2) rem(10) 0 rgba(0, 0, 0, 0.25);
   background-color: $white;
+  height: 100%;
 
   @include mq("md") {
     width: rem(333);
+    height: 100%;
 }
 }
 
