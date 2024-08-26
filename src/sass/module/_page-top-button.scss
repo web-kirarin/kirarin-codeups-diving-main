@@ -11,6 +11,7 @@ main {
   width: rem(51);
   top: 90.4%;
   right: calc(50% - min(46.4%, 50rem));
+  cursor: pointer;
 
   @include mq("md") {
     top: 87%;
