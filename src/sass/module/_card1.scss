@@ -8,17 +8,14 @@
 
   @include mq("md") {
     width: rem(333);
-    height: 100%;
 }
 }
 
 .card1__img {
   width: rem(280);
-  width: 100%;
 
   @include mq("md") {
     width: rem(333);
-    width: 100%;
   }
 }
 
