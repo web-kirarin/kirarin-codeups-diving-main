@@ -97,7 +97,7 @@ div.price__pc-img img {
 
   @include mq("md") {
     bottom: 5%;
-    left:  calc(50% - min(43%, 38.8rem));
+    left:  calc(50% - min(43%, 50rem));
     display: block;
     width: 30.5%;
     height: 17%;
