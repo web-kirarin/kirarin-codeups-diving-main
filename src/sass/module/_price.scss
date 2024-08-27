@@ -2,12 +2,12 @@
 
 .price {
   position: relative;
-  margin-top: rem(82);
+  margin-top: rem(81);
   padding: rem(80) 0 rem(79);
   background-color: $green3;
 
   @include mq("md") {
-    margin-top: rem(142);
+    margin-top: rem(140);
     padding: rem(101) 0 rem(103);
   }
 }
@@ -97,7 +97,7 @@ div.price__pc-img img {
 
   @include mq("md") {
     bottom: 5%;
-    left:  calc(50% - min(43%, 40rem));
+    left:  calc(50% - min(43%, 38.8rem));
     display: block;
     width: 30.5%;
     height: 17%;
