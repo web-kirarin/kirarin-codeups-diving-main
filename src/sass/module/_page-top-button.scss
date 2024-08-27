@@ -25,8 +25,6 @@ main {
   display: block;
   height: rem(51);
   width: rem(51);
-  border-radius: 50%;
-  background-color: $white;
 
   @include mq("md") {
     height: rem(86);
