@@ -14,7 +14,7 @@
 .contact__fish {
   position: absolute;
   top: -4.2%;
-  right: calc(50% - min(45.8%, 50rem));
+  right: calc(50% - min(49.99%, 42.3rem));
   display: block;
   width: 38.5%;
   height: 8%;
@@ -25,7 +25,7 @@
 
   @include mq("md") {
     top: -10%;
-    right: calc(50% - min(47%, 43rem));
+    right: calc(50% - min(49%, 42.3rem));
     display: block;
     width: 22%;
     height: 35%;
