@@ -38,7 +38,7 @@
 
   @include mq("md") {
     top: -19.6%;
-    left:  calc(50% - min(43%, 40rem));
+    left:  calc(50% - min(43%, 38.5rem));
     display: block;
     width: 20.9%;
     height: 22%;
@@ -54,7 +54,7 @@
 
   @include mq("md") {
     bottom: -11%;
-    right: calc(50% - min(43%, 33.7rem));
+    right: calc(50% - min(38%, 33.75rem));
     display: block;
     width: 5%;
     height: 26%;
