@@ -151,7 +151,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
           effect: "fade",
           speed: 3000,
           allowTouchMove: false,
-          autoHeight:true,
+          autoHeight: true,
           autoplay: {
             delay: 3000,
           },
@@ -189,13 +189,13 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       });
   });
 
-  // スライダー2個目
+  //スライダー2個目
   const swiper02 = new Swiper(".cp-swiper .swiper", {
     loop: true,
     speed: 1500,
     slidesPerView: 1.3,
     spaceBetween: 24,
-    autoHeight: true,
+    autoHeight: false,
     autoplay: {
       delay: 1500,
       disableOnInteraction: false,
@@ -235,6 +235,30 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       prevEl: ".cp-swiper-button-prev",
     },
   });
+
+  // カードの高さを揃える関数
+  function setEqualHeight() {
+    let maxHeight = 0;
+
+    // 各スライドのカードの高さを取得
+    $('.cp-swiper .swiper-slide .campaign__card').each(function () {
+      const slideHeight = $(this).outerHeight();
+      if (slideHeight > maxHeight) {
+        maxHeight = slideHeight;
+      }
+    });
+
+    // すべてのスライドのカードに最大高さを設定（min-heightに変更）
+    $('.cp-swiper .swiper-slide .campaign__card').css('min-height', maxHeight);
+  }
+
+  // スライダーの初期化とイベントに高さ揃え関数を追加
+  swiper02.on('init slideChange resize', function () {
+    setEqualHeight();
+  });
+
+  // 初期化時に高さを揃える
+  setEqualHeight();
 
   // 要素の取得とスピードの設定
   var box = $('.js-image'),
