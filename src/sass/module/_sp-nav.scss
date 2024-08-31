@@ -10,8 +10,7 @@
   opacity: 0;
   background-color: $green;
   z-index: 500;
-  padding: rem(21) 0 rem(111);
-  overflow-y: scroll;
+  padding: rem(11) 0 rem(111);
   transition: 0.6s visibility, 0.6s opacity ease-in-out;
 }
 
@@ -23,12 +22,8 @@
 }
 
 .sp-nav__flex {
-  position: absolute;
-  top: 0;
-  left: rem(15);
   display: flex;
   justify-content: center;
-  margin-top: rem(14);
   z-index: 400;
 }
 

@@ -1,16 +1,33 @@
 
 jQuery(function ($) { // この中であればWordpressでも「$」が使用可能になる
+  // ドロワーメニューの開閉を制御する関数
   const toggleDrawerMenu = () => {
     console.log("Hamburger menu toggled");
     $(".js-hamburger").toggleClass("is-active");
     $(".js-sp-nav").toggleClass("fade");
     $(".js-header").toggleClass("is-active");
-    $(".js-header").removeClass("scrolled");
 
+    // メニューが開いたときにscrolledを削除
     if ($(".js-header").hasClass("is-active")) {
+      $(".js-header").removeClass("scrolled");
       console.log("Header is now active");
     } else {
+      resetHeader();
       console.log("Header is now inactive");
+    }
+
+    // ドロワーメニューの表示状態に応じてoverflowを調整
+    adjustNavOverflow();
+  };
+
+  // ヘッダーを初期状態に戻す関数
+  const resetHeader = () => {
+    $(".js-header").removeClass("is-active");
+    // メニューが閉じられている場合、スクロール位置に応じてscrolledを設定
+    if (window.scrollY > window.innerHeight) {
+      $(".js-header").addClass("scrolled");
+    } else {
+      $(".js-header").removeClass("scrolled");
     }
   };
 
@@ -21,34 +38,63 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       console.log(header); // ヘッダー要素が取得できているか確認
     }
 
-    $(".js-hamburger").off("click").on("click", toggleDrawerMenu);
+    $(".js-hamburger").off("click").on("click", function () {
+      toggleDrawerMenu();
+    });
 
-    // ドロワーメニュー内をクリックしたときにもメニューを閉じる
     $(".js-sp-nav").off("click").on("click", function () {
       console.log("Menu item clicked");
       $(".js-hamburger").removeClass("is-active");
       $(".js-sp-nav").removeClass("fade");
-      $(".js-header").removeClass("is-active"); // メニューを閉じるときにヘッダーのクラスもリセット
+      resetHeader(); // メニューを閉じたときにヘッダーをリセット
+      adjustNavOverflow(); // メニューを閉じたときにoverflowも再調整
     });
   };
 
-  // ローディングアニメーションが完了した後にドロワーメニューを初期化
-  $(window).on("load", function () {
-    // ローディングアニメーション関連の処理...
+  // スクロールイベントの処理を更新する
+  document.addEventListener("scroll", function () {
+    const header = document.querySelector('.header');
 
-    // アニメーションが完了したらドロワーメニューの初期化を行う
-    initDrawerMenu();
-
-    // ウィンドウリサイズイベントを設定
-    $(window).resize(handleResize);
-
-    // 初期表示時のドロワーメニューの状態を設定
-    handleResize();
+    // ドロワーメニューが開いていない場合のみスクロールを検出
+    if (!$(".js-header").hasClass("is-active")) {
+      if (window.scrollY > window.innerHeight) { // メインビューの高さを超えたら
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
   });
+
+  // 初期表示時にoverflowの状態をチェック
+  $(window).on("load", function () {
+    initDrawerMenu();
+    $(window).resize(handleResize);
+    handleResize();
+    adjustNavOverflow(); // 初期表示時にoverflowの状態をチェック
+  });
+
+  // ウィンドウのリサイズ時に高さの変化を監視してoverflowを調整
+  $(window).on("resize", function () {
+    adjustNavOverflow();
+  });
+
+  const adjustNavOverflow = () => {
+    if ($(".js-sp-nav").hasClass("fade")) {
+      if (window.innerHeight > 666) {
+        $(".sp-nav").css("overflow-y", "hidden");
+      } else {
+        $(".sp-nav").css("overflow-y", "scroll");
+      }
+    } else {
+      $(".sp-nav").css("overflow-y", "scroll"); // メニューが閉じているときは常にスクロール可能にする
+    }
+  };
 
   const resetDrawerMenu = () => {
     $(".js-hamburger").removeClass("is-active");
-    $(".js-sp-nav").removeClass("fade").css("display", ""); // displayプロパティをリセット
+    $(".js-sp-nav").removeClass("fade").css("display", "");
+    resetHeader();
+    adjustNavOverflow(); // メニューをリセットする際にoverflowも再調整
   };
 
   const handleResize = () => {
@@ -62,6 +108,11 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       }
     }
   };
+
+
+
+
+
 
   // ローディングアニメーションの処理
   $(window).on("load", function () {
@@ -296,25 +347,6 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
         counter = 1;
       }
     });
-  });
-
-  // ページ読み込み完了後に実行されるコード
-  document.addEventListener("scroll", function () {
-    // トップページのヘッダー用
-    var header = document.querySelector('.header');
-    if (window.scrollY > window.innerHeight) {//メインビューの高さを超えたら
-      header.classList.add('scrolled');
-    } else if (header) {
-      header.classList.remove('scrolled');
-    }
-
-    // 下層ページのヘッダー用
-    var subHeader = document.querySelector('.sub-header');
-    if (subHeader && window.scrollY > 550) {
-      subHeader.classList.add('scrolled');
-    } else if (subHeader) {
-      subHeader.classList.remove('scrolled');
-    }
   });
 
   // resizeイベント
