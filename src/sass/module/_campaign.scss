@@ -13,6 +13,10 @@
   height: 100%;
 }
 
+.campaign__slide {
+  position: relative;
+}
+
 .campaign__slider {
   margin-top: rem(32);
   margin-right: calc(50% - 50vw);

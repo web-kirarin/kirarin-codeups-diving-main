@@ -240,6 +240,12 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   function setEqualHeight() {
     let maxHeight = 0;
 
+    // すべてのスライドの高さをリセット
+    $('.cp-swiper .swiper-slide .campaign__card').css({
+      'min-height': 'auto',
+      'height': 'auto' // 高さを自動にリセット
+    });
+
     // 各スライドのカードの高さを取得
     $('.cp-swiper .swiper-slide .campaign__card').each(function () {
       const slideHeight = $(this).outerHeight();
@@ -248,8 +254,13 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       }
     });
 
-    // すべてのスライドのカードに最大高さを設定（min-heightに変更）
-    $('.cp-swiper .swiper-slide .campaign__card').css('min-height', maxHeight);
+    // 最大高さを使用してすべてのカードの高さを設定
+    $('.cp-swiper .swiper-slide .campaign__card').each(function () {
+      $(this).css({
+        'min-height': maxHeight,
+        'overflow': 'visible' // 影が表示されるように
+      });
+    });
   }
 
   // スライダーの初期化とイベントに高さ揃え関数を追加
@@ -259,6 +270,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
 
   // 初期化時に高さを揃える
   setEqualHeight();
+
 
   // 要素の取得とスピードの設定
   var box = $('.js-image'),
