@@ -245,6 +245,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
     loop: true,
     speed: 1500,
     slidesPerView: "auto",
+    loopedSlides: 2,
     spaceBetween: 24,
     autoHeight: false,
     autoplay: {
