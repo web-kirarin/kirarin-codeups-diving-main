@@ -15,6 +15,11 @@
 
 .campaign__slide {
   position: relative;
+  width: rem(280);
+
+  @include mq("md") {
+    width: rem(333);
+  }
 }
 
 .campaign__slide.swiper-slide {
