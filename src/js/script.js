@@ -244,7 +244,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
   const swiper02 = new Swiper(".cp-swiper .swiper", {
     loop: true,
     speed: 1500,
-    slidesPerView: 1.3,
+    slidesPerView: "auto",
     spaceBetween: 24,
     autoHeight: false,
     autoplay: {
@@ -252,32 +252,7 @@ jQuery(function ($) { // この中であればWordpressでも「$」が使用可
       disableOnInteraction: false,
     },
     breakpoints: {
-      450: {
-        slidesPerView: 1.5,
-        spaceBetween: 24,
-      },
-      500: {
-        slidesPerView: 1.8,
-        spaceBetween: 24,
-      },
-      600: {
-        slidesPerView: 2,
-        spaceBetween: 30,
-      },
       767: {
-        slidesPerView: 2.5,
-        spaceBetween: 30,
-      },
-      900: {
-        slidesPerView: 2.8,
-        spaceBetween: 30,
-      },
-      1023: {
-        slidesPerView: 3,
-        spaceBetween: 40,
-      },
-      1300: {
-        slidesPerView: 3.5,
         spaceBetween: 40,
       },
     },
